@@ -1,13 +1,12 @@
-import _ from 'lodash';
+import { taskItem } from "./modules/task";
+import { project } from "./modules/project";
 
 
-function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+const taskOne = taskItem("heasdlo")
+console.log(taskOne.getName());
+
+const projectOne = project("To do list");
+projectOne.addTask(taskOne);
+projectOne.printTasks();
+
+
