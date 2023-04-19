@@ -1,27 +1,24 @@
 import { taskItem } from "./modules/task";
 import { project } from "./modules/project";
+import { toDoList } from "./modules/todolist";
 
 
-const taskOne = taskItem("Task One")
-const taskTwo = taskItem("Task Two")
-const taskThree = taskItem("Task Three")
+const taskOne = taskItem("Gym - Ridge Workout");
+const taskTwo = taskItem("C4D creative work");
+const taskThree = taskItem("Read Essentilism");
+const taskFour = taskItem("Make your first CC TikTok");
 
-const projectMain = project("Project Main");
+const dailyWork = project("Daily Work Flow");
 
-taskTwo.setName("TASKTWOO");
+dailyWork.addTask(taskOne);
+dailyWork.addTask(taskTwo);
+dailyWork.addTask(taskThree);
+dailyWork.addTask(taskFour);
 
-projectMain.addTask(taskOne);
-projectMain.addTask(taskTwo);
-projectMain.addTask(taskThree);
-
-projectMain.printTasks();
-
-
-projectMain.deleteTask(taskThree);
+dailyWork.printTasks();
 
 
-projectMain.printTasks();
-console.log(projectMain.getProjectName());
+
 
 
 

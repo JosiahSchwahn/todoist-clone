@@ -11,7 +11,7 @@ export const taskItem = ((name) => {
 
     //instance field of taskItems
     let priority = Priorities.Low;
-    let description = "Empty Description...";
+    let description = "...";
     
     const getName = () => {
         return name
@@ -39,7 +39,7 @@ export const taskItem = ((name) => {
         description = newDescription;
     }
 
-    return {getName, setName, getPriority}
+    return {getName, setName, getPriority, setPriority, editDescription}
 
 });
 
