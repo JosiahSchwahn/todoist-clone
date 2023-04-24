@@ -39,7 +39,13 @@ export const taskItem = ((name) => {
         description = newDescription;
     }
 
-    return {getName, setName, getPriority, setPriority, editDescription}
+    const getDescription = () => {
+
+        return description;
+
+    }
+
+    return {getName, setName, getPriority, setPriority, editDescription, getDescription}
 
 });
 

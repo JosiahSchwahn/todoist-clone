@@ -10,6 +10,7 @@ export const project = ((name) => {
     const setProjectName = (newName) =>{
         name = newName;
     }
+
       
     const addTask = (taskItem) => {
         projectTasks.push(taskItem);
@@ -18,8 +19,6 @@ export const project = ((name) => {
     const deleteTask = (taskItem) =>{
         projectTasks = projectTasks.filter((task) => task.getName() !== taskItem.getName())
     }
-
-
 
     const printTasks = () => {   
         for(let i = 0; i < projectTasks.length; i++){

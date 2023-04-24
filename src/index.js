@@ -6,7 +6,7 @@ import { toDoList } from "./modules/todolist";
 const taskOne = taskItem("Gym - Ridge Workout");
 const taskTwo = taskItem("C4D creative work");
 const taskThree = taskItem("Read Essentilism");
-const taskFour = taskItem("Make your first CC TikTok");
+const taskFour = taskItem("Make your first CC TikTokkkk");
 
 const dailyWork = project("Daily Work Flow");
 
