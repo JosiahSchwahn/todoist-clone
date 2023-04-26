@@ -1,31 +1,12 @@
 import { taskItem } from "./task";
 
-/*
-    
-                    <div id="item-container">
-                        <div class="priority-container">
-                            <button>
-                                <svg width="18" height="18" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="6" cy="6" r="5.5" fill="#362D21" stroke="#F79619"/>
-                                </svg>    
-                            </button>
-                        </div>
-                        <div class="task-name-description-container">
-                            <div class="task-name">Ridge Workout</div>
-                            <div class="task-description">Chest and Back - Compound Focus Day</div>
-                        </div>
-                    </div>
-                
-*/
-/* this function is designed to create a new task Item in the Dom and return the element to be rendered */
-
 export const taskItemUICreator = (taskItem) => {
 
     const itemContainer = document.createElement("div");
     itemContainer.id = "item-container";
 
     const priorityContainer = document.createElement("div");
-    priorityContainer.classList.add("priority-container");
+    priorityContainer.classList.add("task-priority-container");
 
     const button = document.createElement("button");
 

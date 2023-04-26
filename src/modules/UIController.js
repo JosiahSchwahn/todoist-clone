@@ -27,6 +27,7 @@ export const UIController = (todolist) => {
     const testProject = project("Test Project");
     testProject.addTask(taskItemOne);
     testProject.addTask(taskItemTwo);
+    testProject.addTask(taskItemThree);
     
     
 
