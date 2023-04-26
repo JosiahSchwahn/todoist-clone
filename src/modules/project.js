@@ -2,7 +2,7 @@ import { taskItem } from "./task";
 
 export const project = ((name) => {
 
-    let projectTasks = [];
+    let projectTasks = [taskItem("Sample Task", "Sample Description")];
 
     const getProjectName = () => {
         return name;
@@ -11,6 +11,9 @@ export const project = ((name) => {
         name = newName;
     }
 
+    const getProjectArray = () =>{
+        return projectTasks;
+    }
       
     const addTask = (taskItem) => {
         projectTasks.push(taskItem);
@@ -20,12 +23,12 @@ export const project = ((name) => {
         projectTasks = projectTasks.filter((task) => task.getName() !== taskItem.getName())
     }
 
-    const printTasks = () => {   
+    const printTasksNames = () => {   
         for(let i = 0; i < projectTasks.length; i++){
             console.log(projectTasks[i].getName());
         }
     }
 
-    return {addTask, deleteTask, printTasks, getProjectName}
+    return {addTask, deleteTask, printTasksNames, getProjectName, getProjectArray}
 
 });

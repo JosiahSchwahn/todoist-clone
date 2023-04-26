@@ -1,10 +1,43 @@
 import { taskItem } from "./task";
 import { project } from "./project";
 import { toDoList } from "./todolist";
-
-const UIController = () => {
-
+import { taskItemUICreator } from "./taskItemUI";
 
 
+
+export const UIController = (todolist) => {
+
+    const taskContainer = document.querySelector(".project-task-items")
+    const addTaskBtn = document.querySelector(`#add-task-btn`);
+
+    const renderTasks = (project) =>{
+        project.getProjectArray().forEach(task => {
+            let taskElement = taskItemUICreator(task);
+            taskContainer.appendChild(taskElement);
+        });
+    }
+
+    
+
+    /* test adding items */
+    const taskItemOne = taskItem("JavaScript Programming", "Description");
+    const taskItemTwo = taskItem("WorkOut", "Camden x Back and Bi workout");
+    const taskItemThree = taskItem("Pick up Ava from Airport", "WE love it");
+
+    const testProject = project("Test Project");
+    testProject.addTask(taskItemOne);
+    testProject.addTask(taskItemTwo);
+    
+    
+
+    testProject.printTasksNames();
+    renderTasks(testProject);
+    
+
+    
+
+    return{renderTasks}
+
+    
 
 }

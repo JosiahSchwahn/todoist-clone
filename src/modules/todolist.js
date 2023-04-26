@@ -3,7 +3,7 @@ import { project } from "./project";
 
 export const toDoList = (() =>{
 
-    let projectList = [project("default project")];
+    let projectList = [project("Sample Project")];
 
 
     const getProjectList = () => {
@@ -29,4 +29,4 @@ export const toDoList = (() =>{
     return {printProjectList, addProject, getProjectList, containsProject}
 
 
-});
+})();

@@ -1,7 +1,7 @@
 import { taskItem } from "./task";
 
 /*
-    <div class="project-task-items">
+    
                     <div id="item-container">
                         <div class="priority-container">
                             <button>
@@ -15,39 +15,42 @@ import { taskItem } from "./task";
                             <div class="task-description">Chest and Back - Compound Focus Day</div>
                         </div>
                     </div>
-                </div>
+                
 */
 /* this function is designed to create a new task Item in the Dom and return the element to be rendered */
 
 export const taskItemUICreator = (taskItem) => {
 
-    const projectTaskItems = document.createElement("div");
-    projectTaskItems.classList.add("project-task-items");
-
     const itemContainer = document.createElement("div");
     itemContainer.id = "item-container";
-  
+
     const priorityContainer = document.createElement("div");
     priorityContainer.classList.add("priority-container");
 
     const button = document.createElement("button");
 
+    // create a new SVG element
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svg.setAttributeNS("width", "18");
-    svg.setAttributeNS("height", "18");
-    svg.setAttributeNS("viewBox", "0 0 12 12");
-    svg.setAttributeNS("fill", "none");
+    svg.setAttribute("width", "18");
+    svg.setAttribute("height", "18");
+    svg.setAttribute("viewBox", "0 0 12 12");
+    svg.setAttribute("fill", "none");
 
+    // create a new circle element inside the SVG element
     const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    circle.setAttributeNS("cx", "6");
-    circle.setAttributeNS("cy", "6");
-    circle.setAttributeNS("r", "5.5");
-    circle.setAttributeNS("fill", "#362D21");
-    circle.setAttributeNS("stroke", "#F79619");
+    circle.setAttribute("cx", "6");
+    circle.setAttribute("cy", "6");
+    circle.setAttribute("r", "5.5");
+    circle.setAttribute("fill", "#362D21");
+    circle.setAttribute("stroke", "#F79619");
 
+        // append the circle element to the SVG element, and the SVG element to the button element
     svg.appendChild(circle);
     button.appendChild(svg);
+
+    // append the button element to the priority container
     priorityContainer.appendChild(button);
+
 
     const taskNameDescriptionContainer = document.createElement("div");
     taskNameDescriptionContainer.classList.add("task-name-description-container");
@@ -66,9 +69,8 @@ export const taskItemUICreator = (taskItem) => {
     itemContainer.appendChild(priorityContainer);
     itemContainer.appendChild(taskNameDescriptionContainer);
   
-    projectTaskItems.appendChild(itemContainer);
-  
-    return projectTaskItems;
+     // return the item container
+    return itemContainer;
 
 
 }

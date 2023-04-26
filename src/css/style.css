@@ -3,8 +3,8 @@
 
 :root{
     
-    --header-sizing: clamp(25px, 5vh, 200px);
-    --footer-sizing: clamp(25px, 5vh, 200px);
+    --header-sizing: clamp(20px, 4.5vh, 200px);
+    --footer-sizing: clamp(20px, 4.5vh, 200px);
     --body-sizing: calc(100vh - (var(--header-sizing) + var(--footer-sizing)));
     
     --primary-color: #202020;
@@ -12,8 +12,9 @@
     --accent-color: #ffc517;
     --red-color: #ff7a51;
     --font-color: #fffdf8;
+    --gray-font-color:#676e6c;
     --box-shadow: 0.8px 4.6px 1.6px rgba(0, 0, 0, 0.048), 1.6px 8.9px 3.9px rgba(0, 0, 0, 0.067), 2.3px 13px 7.3px rgba(0, 0, 0, 0.082),
-    3.1px 17.4px 13px rgba(0, 0, 0, 0.097), 4.4px 24.3px 24.2px rgba(0, 0, 0, 0.116), 9px 50px 58px rgba(0, 0, 0, 0.16);
+    3.1px 17.4px 13px rgba(246, 0, 0, 0.097), 4.4px 24.3px 24.2px rgba(0, 0, 0, 0.116), 9px 50px 58px rgba(0, 0, 0, 0.16);
 }
 
 /*removing dafault button styling*/
@@ -22,9 +23,15 @@ button{
     border: none;
     padding: 0px;
     background-color: transparent;
-    color: red;
+  
     text-decoration: none;
     cursor: pointer;
+
+}
+
+form{
+    position: absolute;
+    font-size: 12px;
 
 }
 
@@ -84,42 +91,48 @@ footer{
 }
 
 #project-view-container{
+    
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 
     background-color: #242424;
-    width: clamp(250px, 20%, 400px);
+    flex: 1 1 20%;
+    max-width: 220px;
 }
-
-
-
 
 
 #task-view-container{
 
-    background-color: blue;
-    width: clamp(750px, 80%, 100%);
-    background-color: var(--primary-color);
-
-    gap: 15px;
-    padding-left: 100px;
-    padding-right: 100px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
 
+    background-color: var(--primary-color);   
+  
+    flex: 1 1 80%;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
-.task-list{
-    --padding-task-list: 10px;
-    width: 80%;
-    padding-top: var(--padding-task-list);
-    padding-bottom: var(--padding-task-list);
-    padding-left: var(--padding-task-list);
-    
+.project-name{
+    font-size: 28px;
+    padding-bottom: 18px;
+    display: flex;
+    align-items: center;
+    height: 30px;
 }
 
 #add-task-btn{
-    color: #8d8581;
+    color: var(--gray-font-color);
+    width: clamp(100px, 10%, 200px);
+    transition: color 0.3s ease-in-out;
+
+}
+#add-task-btn:hover {
+    color: var(--red-color);
 }
 
 /* item styling */
@@ -128,6 +141,9 @@ footer{
     display: flex;
     flex-direction: row;
     gap: 8px;
+    margin: 10px 0px 10px 0px;
+
+    border-bottom: solid 1px rgb(67, 67, 67);
     
 }
 .task-name-description-container{
@@ -146,5 +162,28 @@ footer{
 .task-description{
 
     font-weight: 100;
+    font-size: 12px;
+    margin-bottom: 12px;
 
 }
+
+/* Modal Styling */
+
+input{
+
+    border: none;
+    border-radius: 3px;
+    color: var(--gray-font-color);
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 16px;
+
+}
+
+.priority-container{
+    display: flex;
+    align-items: center;
+    color: var(--gray-font-color);
+   
+}
+
