@@ -26,11 +26,14 @@ button{
     padding: 0px;
     background-color: transparent;
   
+    margin: 3px;
+
     text-decoration: none;
     cursor: pointer;
 }
 
 form.rating{
+    
     
     display: flex;
     flex-direction: column;
@@ -185,7 +188,12 @@ input#description{
     font-weight: 100;
 }
 
-#modal-submit{
+#modal-bottom-button-container{
+    margin-left: auto; 
+}
+
+
+#modal-submit, #cancel-modal{
     background: #db4d4b;
     color: var(--font-color);
 
@@ -197,14 +205,21 @@ input#description{
     border-radius: 4px;
     border: none;
     padding: 5px 10px 5px 10px;
-    margin-left: auto; 
+    
 }
 
+#cancel-modal{
+
+    background: #2c2c2c;
+ 
+}
+    
 #radio-priority-1, #radio-priority-2, #radio-priority-3, #radio-priority-4{
     width: 14px;
     height: 14px;
     background-color: #3366ff;
     border-color: #3366ff;
+    cursor:pointer;
 }
 
 .priority-container{

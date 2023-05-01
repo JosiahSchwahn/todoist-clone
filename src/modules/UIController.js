@@ -8,19 +8,40 @@ import { modalCreator } from "./taskModal";
 
 export const UIController = (todolist) => {
 
+   
+
     const taskContainer = document.querySelector(".project-task-items")
     const addTaskBtn = document.querySelector(`#add-task-btn`);
 
-    const renderTasks = (project) =>{
+
+    const loadHomePage = (() =>{
+        //creates addTaskModal
+        const addTaskModal = modalCreator();
+        taskContainer.appendChild(addTaskModal);  
+    })();
+
+
+
+    
+
+
+    const renderProjectTasks = (project) =>{
         project.getProjectArray().forEach(task => {
             let taskElement = taskItemUICreator(task);
             taskContainer.appendChild(taskElement);
         });
-    }
-
+    };  
+   
+    
     
 
-    /*
+    return{renderProjectTasks}
+
+}
+
+
+
+ /*
     
     const taskItemOne = taskItem("JavaScript Programming", "Description");
     const taskItemTwo = taskItem("WorkOut", "Camden x Back and Bi workout");
@@ -31,15 +52,5 @@ export const UIController = (todolist) => {
     testProject.addTask(taskItemTwo);
     testProject.addTask(taskItemThree);
     testProject.printTasksNames();
-    renderTasks(testProject);
-     */
-    const addTaskModal = modalCreator();
-    taskContainer.appendChild(addTaskModal);
-   
-    
-
-    return{renderTasks}
-
-    
-
-}
+    renderProjectTasks(testProject);
+    */
