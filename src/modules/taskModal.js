@@ -1,14 +1,11 @@
 
 
 export const modalCreator = () => {
-     // Create the modal div
-    const modalDiv = document.createElement('div');
-    modalDiv.id = 'modal';
+   
 
     // Create the form element
     const form = document.createElement('form');
     form.className = 'rating';
-    modalDiv.appendChild(form);
 
     // Create the text input container
     const textInputContainer = document.createElement('div');
@@ -93,7 +90,7 @@ export const modalCreator = () => {
 
     //setting cancel button attributes
     cancelButton.setAttribute("id","cancel-modal");
-    cancelButton.setAttribute("type", "cancel");
+    
 
     modalBottomButtonContainer.appendChild(cancelButton);
 
@@ -112,6 +109,6 @@ export const modalCreator = () => {
 
 
 
-    return modalDiv;
+    return form;
 
 }

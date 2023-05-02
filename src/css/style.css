@@ -32,13 +32,18 @@ button{
     cursor: pointer;
 }
 
+
+.active-flex{
+    display: flex;
+}
+
 form.rating{
     
-    
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     height: 80px;
+    width: clamp(400px, 100%, 1500px);
 
     border: solid 1px var(--gray-font-color);
     border: solid 1px var(--gray-font-color);

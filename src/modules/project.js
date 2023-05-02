@@ -2,7 +2,7 @@ import { taskItem } from "./task";
 
 export const project = ((name) => {
 
-    let projectTasks = [taskItem("Sample Task", "Sample Description")];
+    let projectTasks = [taskItem("Sample Task Name", "Sample Task Description")];
 
     const getProjectName = () => {
         return name;

@@ -2,8 +2,8 @@ import { taskItem } from "./task";
 
 export const taskItemUICreator = (taskItem) => {
 
-    const addTaskModal = document.createElement("div");
-    addTaskModal.id = "item-container";
+    const itemContainer = document.createElement("div");
+    itemContainer.id = "item-container";
 
     const priorityContainer = document.createElement("div");
     priorityContainer.classList.add("task-priority-container");
@@ -47,11 +47,11 @@ export const taskItemUICreator = (taskItem) => {
     taskNameDescriptionContainer.appendChild(taskName);
     taskNameDescriptionContainer.appendChild(taskDescription);
   
-    addTaskModal.appendChild(priorityContainer);
-    addTaskModal.appendChild(taskNameDescriptionContainer);
+    itemContainer.appendChild(priorityContainer);
+    itemContainer.appendChild(taskNameDescriptionContainer);
   
      // return the item container
-    return addTaskModal;
+    return itemContainer;
 
 
 }

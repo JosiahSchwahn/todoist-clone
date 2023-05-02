@@ -3,7 +3,8 @@ import { project } from "./project";
 
 export const toDoList = (() =>{
 
-    let projectList = [project("Sample Project")];
+    let projectList = [project("First Project on Load")];
+    let currentViewProject = 0;
 
 
     const getProjectList = () => {
@@ -26,7 +27,16 @@ export const toDoList = (() =>{
         projectList.push(newProject);
     }
 
-    return {printProjectList, addProject, getProjectList, containsProject}
+    const getProjectViewNumber = () =>{
+        return currentViewProject
+    }
+
+    const setProjectViewNumber = (newView) =>{
+
+        currentViewProject = newView;
+    }
+
+    return {printProjectList, addProject, getProjectList, containsProject, getProjectViewNumber, setProjectViewNumber}
 
 
 })();
