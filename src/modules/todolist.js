@@ -7,6 +7,10 @@ export const toDoList = (() =>{
     let currentViewProject = 0;
 
 
+    const getLiveProject = () =>{
+        return projectList[currentViewProject];
+    }
+
     const getProjectList = () => {
         return projectList;
     }
@@ -36,7 +40,7 @@ export const toDoList = (() =>{
         currentViewProject = newView;
     }
 
-    return {printProjectList, addProject, getProjectList, containsProject, getProjectViewNumber, setProjectViewNumber}
+    return {printProjectList, addProject, getProjectList, containsProject, getProjectViewNumber, setProjectViewNumber, getLiveProject}
 
 
 })();
