@@ -47,23 +47,30 @@ export const UIController = (todolist) => {
 
     
 
-    //submit button ~ adds a task
-     //add task // form submission.
-     modal.addEventListener("submit", (e)=>{
+    // ~ event listener for adding a task in the modal - form needs to have a name and description to be added.
+     modalAddTaskBtn.addEventListener("click", (e)=>{
         e.preventDefault();
         const formData = new FormData(modal);
-        const newTask = taskItem(formData.get('task-name'), formData.get('description'));
-        toDoList.getLiveProject().addTask(newTask);
-        renderProjectTasks();
-
+        if(formData.get('task-name') === '' || formData.get('description') === ''){
+            alert("Task needs a name and a description");
+            hideElement;
+        }else{
+            const newTask = taskItem(formData.get('task-name'), formData.get('description'));
+            toDoList.getLiveProject().addTask(newTask);
+            renderProjectTasks();
+            hideElement;
+        }
     });
-
-    //close task modal
-    modalCancelBtn.addEventListener(`click`, (e)=> {
+    
+    //function to hide and clear a element
+    const hideElement = (e) =>{
         e.preventDefault();
         modal.reset();
-        modal.style.display = `none`;
-    })
+        modal.style.display = "none";
+    };
+
+    modalCancelBtn.addEventListener(`click`, hideElement);    
+
 
    //displays task modal
     addTaskBtn.addEventListener(`click`, (e) => {
@@ -72,6 +79,7 @@ export const UIController = (todolist) => {
     });
 
 
+   
 
    
 

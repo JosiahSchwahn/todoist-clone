@@ -13,6 +13,7 @@ export const modalCreator = () => {
 
     // Create the task name input
     const taskNameInput = document.createElement('input');
+    taskNameInput.required = true;
     taskNameInput.type = 'text';
     taskNameInput.id = 'task-name';
     taskNameInput.name = 'task-name';
@@ -20,6 +21,7 @@ export const modalCreator = () => {
 
     // Create the description input
     const descriptionInput = document.createElement('input');
+    descriptionInput.required = true;
     descriptionInput.type = 'text';
     descriptionInput.id = 'description';
     descriptionInput.name = 'description';

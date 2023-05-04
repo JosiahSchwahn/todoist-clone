@@ -45,6 +45,8 @@ form.rating{
     height: 80px;
     width: clamp(400px, 100%, 1500px);
 
+    margin-bottom: 8px;
+
     border: solid 1px var(--gray-font-color);
     border: solid 1px var(--gray-font-color);
     padding: 10px 10px 10px 10px;
@@ -134,6 +136,7 @@ footer{
 }
 
 #add-task-btn{
+    margin: 5px;
     color: var(--gray-font-color);
     width: clamp(100px, 10%, 200px);
     transition: color 0.3s ease-in-out;
