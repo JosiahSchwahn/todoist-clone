@@ -3,16 +3,15 @@ import { project } from "./project";
 import { toDoList } from "./todolist";
 import { taskItemUICreator } from "./taskItemUI";
 import { modalCreator } from "./taskModal";
+import { projectListElement } from "./projectListUI";
 
 
 
 export const UIController = (todolist) => {
 
     //main document selectors
-    //
     const addTaskBtn = document.querySelector(`#add-task-btn`);
     
-
     //creates the modal using the modalCreator module
     const modalContainer = document.querySelector(".modal-container");
     modalContainer.appendChild(modalCreator());
@@ -26,7 +25,6 @@ export const UIController = (todolist) => {
 
 
     const renderProjectTasks = () =>{    
-
         const taskContainer = document.querySelector(".project-task-items");
         taskContainer.innerHTML = '';
         toDoList.getLiveProject().getProjectArray().forEach(task => {
@@ -40,9 +38,22 @@ export const UIController = (todolist) => {
         projectName.innerHTML = toDoList.getLiveProject().getProjectName();
     }
 
+    const renderProjectList = () =>{
+        const projectListQuery = document.querySelector(".project-list-items");
+        let projectList = toDoList.getProjectList();
+        for (let i = 0; i < projectList.length; i++){
+            let projectListItemElement = projectListElement(projectList[i]);
+            projectListQuery.appendChild(projectListItemElement);
+        }
+    }
+
+
+
     const onPageLoad = (() => {
         renderProjectTitle();
-        renderProjectTasks(toDoList.getLiveProject())
+        renderProjectList();
+        renderProjectTasks(toDoList.getLiveProject());
+        
     })();
 
     
@@ -51,24 +62,27 @@ export const UIController = (todolist) => {
      modalAddTaskBtn.addEventListener("click", (e)=>{
         e.preventDefault();
         const formData = new FormData(modal);
-        if(formData.get('task-name') === '' || formData.get('description') === ''){
-            alert("Task needs a name and a description");
-            hideElement;
-        }else{
+        if(formData.get('task-name') === ''){
+            alert("Task needs a name");
+        }else if (formData.get('description') === ''){
+            alert("Task needs a description");
+        }
+        else{
             const newTask = taskItem(formData.get('task-name'), formData.get('description'));
             toDoList.getLiveProject().addTask(newTask);
             renderProjectTasks();
-            hideElement;
+            hideElement(e);
         }
     });
     
-    //function to hide and clear a element
+    //function to hide and clear the modal
     const hideElement = (e) =>{
         e.preventDefault();
         modal.reset();
         modal.style.display = "none";
     };
 
+    //closes modal
     modalCancelBtn.addEventListener(`click`, hideElement);    
 
 

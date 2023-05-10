@@ -14,6 +14,10 @@ export const project = ((name) => {
     const getProjectArray = () =>{
         return projectTasks;
     }
+
+    const getAmountOfProjects = () =>{
+        return projectTasks.length;
+    }
       
     const addTask = (taskItem) => {
         projectTasks.push(taskItem);
@@ -29,6 +33,6 @@ export const project = ((name) => {
         }
     }
 
-    return {addTask, deleteTask, printTasksNames, getProjectName, getProjectArray}
+    return {addTask, deleteTask, printTasksNames, getProjectName, getProjectArray, getAmountOfProjects}
 
 });
