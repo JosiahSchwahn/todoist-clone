@@ -193,6 +193,7 @@ div.project-icon{
 #item-container{
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     gap: 8px;
     margin: 10px 0px 10px 0px;
 
@@ -203,6 +204,11 @@ div.project-icon{
     display: flex;
     flex-direction: column;
     gap: 6px;
+}
+
+.self-delete{
+
+    margin-left: auto;
 }
 
 .task-description{
@@ -277,21 +283,20 @@ input#description{
     display: flex;
     align-items: center;
     justify-content: space-between;
- 
-    font-weight: 400;
+    box-sizing: border-box;
 
-    min-width: 100px;
-    max-width: 200px;
-    border-radius: 4px;
-    padding: 4px;
+    font-weight: 400;
+    gap:10px;
+    margin-left: 12px;
+   
 }
 
-svg {
+
+
+label {
 	fill: rgb(209, 209, 209);
 	height: 1rem;
 	width: 1rem;
-	
-    
 }
 
 #radios label {

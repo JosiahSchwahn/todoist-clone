@@ -47,14 +47,33 @@ export const UIController = (todolist) => {
         }
     }
 
-    //git
+    const deleteTaskItemListener = () =>{
+        const projectTaskItems = document.querySelectorAll("button.self-delete > svg");
+        projectTaskItems.forEach((item) =>{
+            item.addEventListener("click", (event) =>{
+                event.stopPropagation();
+                // the item click call is the most messy code i've ever written. There has to be a better way to traverse 
+                // the dom and access the task name than this. Essentially this reads the deleteSVG (delete button) of each task
+                // and returns the task name that can then be passed into our deleteTask inside of our project function to then finally
+                // re-render our task list with the deleted item. This is a common example of programming your self into a corner with
+                // implementation  of the project.
+                const itemClicked = event.target.parentNode.parentNode.parentNode.children[1].children[0].textContent;
+                console.log(itemClicked);
 
-    const onPageLoad = (() => {
+            });
+        })    
+
+    };
+
+    const render = (() => {
         renderProjectTitle();
         renderProjectList();
         renderProjectTasks(toDoList.getLiveProject());
-        
+        deleteTaskItemListener();
+
     })();
+
+    
 
     
 
@@ -70,7 +89,10 @@ export const UIController = (todolist) => {
         else{
             const newTask = taskItem(formData.get('task-name'), formData.get('description'));
             toDoList.getLiveProject().addTask(newTask);
+            //renders the new list
             renderProjectTasks();
+            //adds delete functionality to all task items present on the page
+            deleteTaskItemListener();
             hideElement(e);
         }
     });
