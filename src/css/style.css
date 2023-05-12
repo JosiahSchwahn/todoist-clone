@@ -334,7 +334,7 @@ input[class="priority-3"]:focus + svg {
 input[class="priority-4"]:hover + svg,
 input[class="priority-4"]:checked + svg,
 input[class="priority-4"]:focus + svg {
-	fill: rgb(104, 255, 93);
+	fill: rgb(255, 255, 255);
 }
 
 .modal-bottom{

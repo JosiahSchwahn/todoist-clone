@@ -22,8 +22,20 @@ export const taskItemUICreator = (taskItem) => {
     circle.setAttribute("cx", "6");
     circle.setAttribute("cy", "6");
     circle.setAttribute("r", "5.5");
-    circle.setAttribute("fill", "#362D21");
-    circle.setAttribute("stroke", "#F79619");
+
+    if(taskItem.getPriority() === 'priority-1'){
+        circle.setAttribute("fill", "#3a2625");
+        circle.setAttribute("stroke", "#ef7364");   
+    } else if(taskItem.getPriority() === 'priority-2'){
+        circle.setAttribute("fill", "#352d22");
+        circle.setAttribute("stroke", "#f68e0f");  
+    } else if(taskItem.getPriority() === 'priority-3'){
+        circle.setAttribute("fill", "#343b45");
+        circle.setAttribute("stroke", "#4299f9");  
+    } else{
+        circle.setAttribute("fill", "#202020");
+        circle.setAttribute("stroke", "#6d6d6d");  
+    } 
 
     // append the circle element to the SVG element, and the SVG element to the button element
     prioSVG.appendChild(circle);

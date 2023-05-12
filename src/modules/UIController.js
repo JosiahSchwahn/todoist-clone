@@ -41,6 +41,7 @@ export const UIController = (todolist) => {
     const renderProjectList = () =>{
         const projectListQuery = document.querySelector(".project-list-items");
         let projectList = toDoList.getProjectList();
+        projectListQuery.innerHTML = '';
         for (let i = 0; i < projectList.length; i++){
             let projectListItemElement = projectListElement(projectList[i]);
             projectListQuery.appendChild(projectListItemElement);
@@ -51,31 +52,31 @@ export const UIController = (todolist) => {
         const projectTaskItems = document.querySelectorAll("button.self-delete > svg");
         projectTaskItems.forEach((item) =>{
             item.addEventListener("click", (event) =>{
-                event.stopPropagation();
+                event.stopPropagation();      
                 // the item click call is the most messy code i've ever written. There has to be a better way to traverse 
                 // the dom and access the task name than this. Essentially this reads the deleteSVG (delete button) of each task
                 // and returns the task name that can then be passed into our deleteTask inside of our project function to then finally
                 // re-render our task list with the deleted item. This is a common example of programming your self into a corner with
                 // implementation  of the project.
                 const itemClicked = event.target.parentNode.parentNode.parentNode.children[1].children[0].textContent;
-                console.log(itemClicked);
-
+                toDoList.getLiveProject().deleteTask(itemClicked);   
+                //after the item has been deleted, render the new list and add delete functionality to them again.
+                pageTaskEvent();
             });
         })    
-
     };
 
-    const render = (() => {
-        renderProjectTitle();
+    const pageTaskEvent = () =>{
+        renderProjectTasks();
         renderProjectList();
-        renderProjectTasks(toDoList.getLiveProject());
         deleteTaskItemListener();
+    };
 
+
+    const onPageLoad = (() => {
+        renderProjectTasks(toDoList.getLiveProject());
+        pageTaskEvent();
     })();
-
-    
-
-    
 
     // ~ event listener for adding a task in the modal - form needs to have a name and description to be added.
      modalAddTaskBtn.addEventListener("click", (e)=>{
@@ -87,15 +88,14 @@ export const UIController = (todolist) => {
             alert("Task needs a description");
         }
         else{
-            const newTask = taskItem(formData.get('task-name'), formData.get('description'));
+            const newTask = taskItem(formData.get('task-name'), formData.get('description'), formData.get('priority'));
             toDoList.getLiveProject().addTask(newTask);
             //renders the new list
-            renderProjectTasks();
-            //adds delete functionality to all task items present on the page
-            deleteTaskItemListener();
+            pageTaskEvent();
             hideElement(e);
         }
     });
+
     
     //function to hide and clear the modal
     const hideElement = (e) =>{
@@ -115,7 +115,8 @@ export const UIController = (todolist) => {
     });
 
 
-   
+
+    
 
    
 

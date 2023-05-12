@@ -23,8 +23,8 @@ export const project = ((name) => {
         projectTasks.push(taskItem);
     };
 
-    const deleteTask = (taskItem) =>{
-        projectTasks = projectTasks.filter((task) => task.getName() !== taskItem.getName())
+    const deleteTask = (taskName) =>{
+        projectTasks = projectTasks.filter((task) => task.getName() !== taskName);
     }
 
     const printTasksNames = () => {   

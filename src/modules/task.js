@@ -1,16 +1,9 @@
 
-const Priorities = {
-    Low: 'low',
-    Medium: 'medium',
-    High: 'high',
-    Critical: 'critical',
-  };
 
-
-export const taskItem = ((name, taskDescription) => {
+export const taskItem = ((name, taskDescription, prio) => {
 
     //instance field of taskItems
-    let priority = Priorities.Low;
+    let priority = prio;
     let description = taskDescription;
     
     const getName = () => {
