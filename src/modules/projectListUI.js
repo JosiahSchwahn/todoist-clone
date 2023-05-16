@@ -1,22 +1,9 @@
-/*
- <!-- ? SINGULAR ITEM-->
-    <div class="project-list-item">
-        <div class="project-icon">
-            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="3.5" cy="3.5" r="3.5" fill="#1A8BB7"/>
-            </svg>   
-        </div>
-        <button class="project-button" id="project-button-one">Project Two</button>       
-        <div class="project-counter">15</div>
-    </div>
-
-
-*/
 
 export const projectListElement = (project) =>{
     // Create the main container
     const projectListItem = document.createElement('div');
     projectListItem.classList.add('project-list-item');
+    
   
     // Create the project icon container
     const projectIcon = document.createElement('div');
@@ -54,6 +41,5 @@ export const projectListElement = (project) =>{
     projectListItem.appendChild(projectIcon);
     projectListItem.appendChild(projectButton);
     projectListItem.appendChild(projectCounter);
-  
     return projectListItem;
 }

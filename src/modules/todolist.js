@@ -3,7 +3,7 @@ import { project } from "./project";
 
 export const toDoList = (() =>{
 
-    let projectList = [project("First Project on Load")];
+    let projectList = [project("First Project on Load"), project("second test project")];
     let currentViewProject = 0;
 
 

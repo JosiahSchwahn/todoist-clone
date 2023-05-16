@@ -38,14 +38,34 @@ export const UIController = (todolist) => {
         projectName.innerHTML = toDoList.getLiveProject().getProjectName();
     }
 
+    //renders project list and adds eventListeners to all project elements
     const renderProjectList = () =>{
         const projectListQuery = document.querySelector(".project-list-items");
         let projectList = toDoList.getProjectList();
         projectListQuery.innerHTML = '';
         for (let i = 0; i < projectList.length; i++){
             let projectListItemElement = projectListElement(projectList[i]);
+            projectListItemElement.setAttribute(`id`, `project-list-item-#${i}`);
             projectListQuery.appendChild(projectListItemElement);
         }
+        //adds eventListener to all project list elements
+        const projectListElements = document.querySelectorAll(".project-list-item");
+        projectListElements.forEach((projectListElement) => {
+            projectListElement.addEventListener("click", (e) => {
+                //gets the id of the clicked element
+                let id = e.target.parentNode.getAttribute("id");
+                id = parseInt(id.charAt(id.length - 1));
+                toDoList.setProjectViewNumber(id);
+                pageTaskEvent();
+            }); 
+        });
+
+        
+    };
+
+    const switchProjectView = () => {
+        const projectListQuery = document.querySelector(".project-list-items");
+        projectListQuery.innerHTML = '';
     }
 
     const deleteTaskItemListener = () =>{

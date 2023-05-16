@@ -170,12 +170,35 @@ div.project-icon{
     padding-right: 150px;
 }
 
+.task-list-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+}
+
 .project-name{
     font-size: 28px;
     padding-bottom: 18px;
     display: flex;
     align-items: center;
     height: 30px;
+}
+
+.project-name-edit-button > svg{
+    
+    display: block;
+    margin: 0 auto;
+ 
+    cursor: pointer;
+}
+
+.edit-project-name-modal{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #dc0a0a;
 }
 
 #add-task-btn{
