@@ -31,6 +31,10 @@ export const toDoList = (() =>{
         projectList.push(newProject);
     }
 
+    const deleteProject = (projectToDelete) =>{
+        projectList = projectList.filter(project => project !== projectToDelete);
+    }
+
     const getProjectViewNumber = () =>{
         return currentViewProject
     }
@@ -40,7 +44,7 @@ export const toDoList = (() =>{
         currentViewProject = newView;
     }
 
-    return {printProjectList, addProject, getProjectList, containsProject, getProjectViewNumber, setProjectViewNumber, getLiveProject}
+    return {printProjectList, addProject, getProjectList, containsProject, getProjectViewNumber, setProjectViewNumber, getLiveProject, deleteProject}
 
 
 })();

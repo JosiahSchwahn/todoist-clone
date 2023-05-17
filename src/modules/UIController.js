@@ -24,7 +24,10 @@ export const UIController = (todolist) => {
 
     //edit project modal selectors
     const editProjectModal = document.querySelector(`.edit-project-modal-container`);
-    const editProjectModalClose = document.querySelector(`.project-modal-close-button > svg`)
+    const editProjectModalClose = document.querySelector(`.project-modal-close-button > svg`);
+    const editProjectSaveButton = document.querySelector(`button.project-save`);
+    const editProjectNameField = document.querySelector(`input#edit-project-modal-input`);
+    const editProjectDeleteButton = document.querySelector(`button.delete-project`);
     
 
 
@@ -37,10 +40,16 @@ export const UIController = (todolist) => {
         });
     }; 
 
-    const renderProjectTitle = () =>{
+
+    const renderProjectTitle = () => {
         const projectName = document.querySelector(`.project-name`);
-        projectName.innerHTML = toDoList.getLiveProject().getProjectName();
+        //clears the HTML to be rerendered
+        projectName.innerHTML = '';
+        const getLiveProjectName = toDoList.getLiveProject().getProjectName();
+        projectName.innerHTML = getLiveProjectName;
     }
+
+ 
 
     //renders project list and adds eventListeners to all project elements
     const renderProjectList = () =>{
@@ -67,11 +76,6 @@ export const UIController = (todolist) => {
         
     };
 
-    const switchProjectView = () => {
-        const projectListQuery = document.querySelector(".project-list-items");
-        projectListQuery.innerHTML = '';
-    }
-
     const deleteTaskItemListener = () =>{
         const projectTaskItems = document.querySelectorAll("button.self-delete > svg");
         projectTaskItems.forEach((item) =>{
@@ -94,6 +98,7 @@ export const UIController = (todolist) => {
         renderProjectTasks();
         renderProjectList();
         deleteTaskItemListener();
+        renderProjectTitle();
     };
 
 
@@ -131,7 +136,6 @@ export const UIController = (todolist) => {
     //closes modal
     modalCancelBtn.addEventListener(`click`, hideElement);    
 
-
    //displays task modal
     addTaskBtn.addEventListener(`click`, (e) => {
         e.preventDefault();
@@ -144,9 +148,34 @@ export const UIController = (todolist) => {
         
     });
 
+
     editProjectModalClose.addEventListener('click', (e) => {
         e.preventDefault();
         editProjectModal.style.display = 'none';
+    });
+
+    editProjectSaveButton.addEventListener('click', (e) => {
+        let newProjectName = editProjectNameField.value;
+        if(newProjectName === ''){
+            alert('Project name is required');
+        } else{
+            toDoList.getLiveProject().setProjectName(newProjectName);
+            editProjectModal.style.display = 'none';
+            pageTaskEvent();
+            editProjectNameField.value = ""; 
+        }
+    });
+
+    editProjectDeleteButton.addEventListener(`click`, (e)=>{
+        e.preventDefault();
+        if(toDoList.getProjectList().length === 1){
+            alert("You cant delete to zero projects, try again");
+            editProjectModal.style.display = 'none';
+        }else{
+            toDoList.deleteProject(toDoList.getLiveProject());
+            editProjectModal.style.display = 'none';
+            pageTaskEvent();
+        }
     });
 
 

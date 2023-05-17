@@ -114,6 +114,21 @@ footer{
     padding: 15px;
 }
 
+.project-info-container{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.add-project{
+
+    margin-left: auto;
+
+}
+
 div.project-icon{
     display: flex;
     justify-content: center;
@@ -195,6 +210,89 @@ div.project-icon{
     cursor: pointer;
 }
 
+form#add-project-form{
+    display: flex;
+    flex-direction: column;
+    color: var(--font-color);
+    position: absolute;
+    bottom: 100px;
+    left: 50px;
+    background: #3366ff;
+    gap: 10px;
+    padding: 10px;
+   
+}
+
+form#add-project-form > input{
+    color: orange;
+}
+form#add-project-form > label{
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+}
+.custom-radios div {
+    display: inline-block;
+}
+.custom-radios input[type="radio"] {
+    display: none;
+}
+.custom-radios input[type="radio"] + label {
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+.custom-radios input[type="radio"] + label span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    line-height: 44px;
+}
+.custom-radios input[type="radio"] + label span img {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.custom-radios input[type="radio"]#color-1 + label span {
+    background-color: #2ecc71;
+}
+.custom-radios input[type="radio"]#color-2 + label span {
+    background-color: #3498db;
+}
+.custom-radios input[type="radio"]#color-3 + label span {
+    background-color: #f1c40f;
+}
+.custom-radios input[type="radio"]#color-4 + label span {
+    background-color: #e74c3c;
+}
+.custom-radios input[type="radio"]:checked + label span img {
+    opacity: 1;
+}
+
+
+.add-project-radio-container {
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.add-project-bottom-button-container{
+    display: flex;
+    flex-direction: row;
+
+}
+
+
 
 .edit-project-modal-container{
     position: absolute;
@@ -265,6 +363,30 @@ input#edit-project-modal-input{
    
 }
 
+.project-modal-bottom-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-left: auto;
+    margin-right: 10px;
+
+}
+
+button.delete-project{
+    background: #181818;
+    color: var(--font-color);
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    
+    max-width: 80px;
+    
+    border-radius: 4px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+}
+
 button.project-save{
 
     background: #db4d4b;
@@ -279,8 +401,7 @@ button.project-save{
     border: none;
     padding: 5px 10px 5px 10px;
 
-    margin-left: auto;
-    margin-right: 10px;
+    
  
 
 }
@@ -364,9 +485,8 @@ input#description{
 
     font-family: var(--font-family);
     font-weight: 500;
-    
-    max-width: 80px;
-    
+    font-size: 1rem;
+    margin: 3px;    
     border-radius: 4px;
     border: none;
     padding: 5px 10px 5px 10px;
@@ -401,17 +521,15 @@ input#description{
 
 
 
-label {
+div.priority-container > label {
 	fill: rgb(209, 209, 209);
 	height: 1rem;
 	width: 1rem;
 }
 
-#radios label {
-	position: relative;
-}
 
-input[type="radio"] {
+
+label > input[type="radio"] {
 	position: absolute;
 	opacity: 0;
 }

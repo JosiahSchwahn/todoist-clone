@@ -33,6 +33,6 @@ export const project = ((name) => {
         }
     }
 
-    return {addTask, deleteTask, printTasksNames, getProjectName, getProjectArray, getAmountOfProjects}
+    return {addTask, deleteTask, printTasksNames, getProjectName, getProjectArray, getAmountOfProjects, setProjectName}
 
 });
