@@ -11,16 +11,20 @@ export const UIController = (todolist) => {
 
     //main document selectors
     const addTaskBtn = document.querySelector(`#add-task-btn`);
+    const editProjectButton = document.querySelector(`.project-name-edit-button`);
     
     //creates the modal using the modalCreator module
     const modalContainer = document.querySelector(".modal-container");
     modalContainer.appendChild(modalCreator());
     
-    //modal selectors
+    //add task modal selectors
     const modalAddTaskBtn = document.querySelector(`#modal-submit`);
     const modalCancelBtn = document.querySelector(`#cancel-modal`);
     const modal = document.querySelector(`form.rating`);
 
+    //edit project modal selectors
+    const editProjectModal = document.querySelector(`.edit-project-modal-container`);
+    const editProjectModalClose = document.querySelector(`.project-modal-close-button > svg`)
     
 
 
@@ -40,13 +44,13 @@ export const UIController = (todolist) => {
 
     //renders project list and adds eventListeners to all project elements
     const renderProjectList = () =>{
-        const projectListQuery = document.querySelector(".project-list-items");
+        const projectListContainer = document.querySelector(".project-list-items");
         let projectList = toDoList.getProjectList();
-        projectListQuery.innerHTML = '';
+        projectListContainer.innerHTML = '';
         for (let i = 0; i < projectList.length; i++){
             let projectListItemElement = projectListElement(projectList[i]);
             projectListItemElement.setAttribute(`id`, `project-list-item-#${i}`);
-            projectListQuery.appendChild(projectListItemElement);
+            projectListContainer.appendChild(projectListItemElement);
         }
         //adds eventListener to all project list elements
         const projectListElements = document.querySelectorAll(".project-list-item");
@@ -132,6 +136,17 @@ export const UIController = (todolist) => {
     addTaskBtn.addEventListener(`click`, (e) => {
         e.preventDefault();
         modal.style.display = `flex`;
+    });
+
+    editProjectButton.addEventListener(`click`, (e) =>{
+        e.preventDefault();
+        editProjectModal.style.display = 'flex';
+        
+    });
+
+    editProjectModalClose.addEventListener('click', (e) => {
+        e.preventDefault();
+        editProjectModal.style.display = 'none';
     });
 
 
