@@ -65,16 +65,35 @@ body{
 
 header{
 
+    
     background-color: var(--secondary-color);
     box-shadow: var(--box-shadow);
 
     box-sizing: border-box;
-    padding: 10px;;
+    padding-block: 10px;
+    padding-inline: 20px;
+
     height: var(--header-sizing);
 
     display: flex;
-    align-items: center; 
+    justify-content: space-between;
+}
+
+
+.left-header-buttons{
+    display: flex;
+    align-items: center;
     justify-content: center;
+}
+#house{
+    margin-left: 10px;
+}
+svg#house:hover, svg#hamburger:hover, svg#profile:hover{
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: var(--gray-font-color);
+    border-radius: 4px;
+    padding: 2px;
 }
 
 #page{
@@ -106,11 +125,11 @@ footer{
     display: flex;
     flex-direction: column;
 
-    
     box-sizing: border-box;
     background-color: #242424;
     flex: 1 1 20%;
     max-width: 220px;
+    min-width: 165px;
     padding: 15px;
 }
 
@@ -121,13 +140,13 @@ footer{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    
+    margin-bottom: 8px;
 
 }
 
 .add-project{
-
     margin-left: auto;
-
 }
 
 div.project-icon{
@@ -137,11 +156,17 @@ div.project-icon{
 }
 
 .project-list-title{
-
     box-sizing: border-box;
-
     color: var(--gray-font-color);
     padding: 6px;
+}
+
+div.project-number-counter{
+    font-size: 12px;
+    background-color: var(--gray-font-color);
+    color: var(--font-color);
+    padding: 6px;
+    border-radius: 4px;;
 }
 
 div.add-project > svg{
@@ -156,16 +181,24 @@ div.add-project > svg{
     justify-content:flex-start;
     box-sizing: border-box;
 
-    padding: 7px;
+    padding: 6px;
+    margin-bottom: 4px;
 }
+
+.project-list-item:hover{
+    background-color: var(--gray-font-color);
+    border-radius: 4px;
+    color: white;
+    transition: 0.5s ease;
+}
+
 
 .project-button{
     margin: 0px;
     margin-left: 6px;
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 14px;
+    font-weight: 500;
     color: var(--font-color);
-
 }
 
 .project-counter{
@@ -478,6 +511,10 @@ button.project-save{
     margin-left: auto;
     color: red;
 }
+button.self-delete > svg > path:hover{
+    fill: white;
+    transition: fill 0.5s ease;
+}
 
 .task-description{
 
@@ -510,7 +547,7 @@ input#task-name, input#description{
 }
 
 input#description{
-    font-weight: 100;
+    font-weight: 300;
 }
 
 #modal-bottom-button-container{

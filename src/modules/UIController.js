@@ -12,6 +12,7 @@ export const UIController = (todolist) => {
     //main document selectors
     const addTaskBtn = document.querySelector(`#add-task-btn`);
     const editProjectButton = document.querySelector(`.project-name-edit-button`);
+
     
     //creates the modal using the modalCreator module (smaller modals are in HTML document)
     const modalContainer = document.querySelector(".modal-container");
@@ -36,6 +37,12 @@ export const UIController = (todolist) => {
     const closeNewProjectButton = document.querySelector(`button#cancel-new-project-button`);
     const addNewProjectButton = document.querySelector(`button#submit-new-project-button`);
     
+    //header buttons and project tab selectors
+    const projectTabHamburgerButton = document.querySelector(`svg#hamburger`);
+    const homeButton = document.querySelector(`svg#house`);
+
+
+
 
     // Clears the current viewed task and items and renders the current live viewed project 
     // by generating taskUI elements and adds them to the project task item to be viewed
@@ -57,6 +64,10 @@ export const UIController = (todolist) => {
         projectName.innerHTML = getLiveProjectName;
     }
 
+    const renderProjectCounter = () => {
+        const projectCounter = document.querySelector(`div.project-number-counter`);
+        projectCounter.innerHTML = `${toDoList.getProjectList().length} out of 10`;
+    }
 
     //clears and renders project list and then adds eventListeners to all project elements
     const renderProjectList = () =>{
@@ -106,6 +117,7 @@ export const UIController = (todolist) => {
 
     //renders application page
     const pageTaskEvent = () =>{
+        renderProjectCounter();
         renderProjectTasks();
         deleteTaskItemListener();
         renderProjectTitle();
@@ -114,6 +126,7 @@ export const UIController = (todolist) => {
 
     //Initial load of the project
     const onPageLoad = (() => {
+        toDoList.getLiveProject().addTask(taskItem("First Task on Load", "Hello there!", "priority-1"))
         renderProjectTasks(toDoList.getLiveProject());
         pageTaskEvent();
     })();
@@ -195,6 +208,7 @@ export const UIController = (todolist) => {
             alert(`deleting ${toDoList.getLiveProject().getProjectName()}`);
             toDoList.deleteProject(toDoList.getLiveProject());
             editProjectModal.style.display = 'none';
+            toDoList.setLiveProjectHome();
             renderProjectList();
         }
         pageTaskEvent();
@@ -215,19 +229,41 @@ export const UIController = (todolist) => {
     addNewProjectButton.addEventListener(`click`, (e)  =>{
         e.preventDefault()
         const formData = new FormData(addProjectForm);
-        console.log([formData.get('projectName'), formData.get('color')]);
         if(formData.get('projectName') === '' ){
             alert("Project Name Field cannot be empty");
-        } else{
-            toDoList.addProject(project(formData.get('projectName'), formData.get('color')));
-            renderProjectList();
+        } 
+        else if(toDoList.getProjectList().length >= 10){
+            alert("Max 10 projects")
+        }
+        else{
+            if(toDoList.containsProject(formData.get('projectName'))){
+                alert("Project Already Exists");
+                addProjectForm.style.display = 'none';
+            }else{
+                toDoList.addProject(project(formData.get('projectName'), formData.get('color')));
+                addProjectForm.style.display = 'none';
+                renderProjectList();
+                renderProjectCounter();
+            }
         }
     });
 
-    
-    
-    
+    //eventHandler for opening and closing the project tab
+    projectTabHamburgerButton.addEventListener('click', ()=> {
+        const projectViewContainer = document.querySelector(`#project-view-container`);
+        let currentDisplay = window.getComputedStyle(projectViewContainer).display;
+        if (currentDisplay === 'flex') {
+            projectViewContainer.style.display = 'none';
+        } else {
+            projectViewContainer.style.display = 'flex';
+        }
+    });
 
+    //eventHandler for home button
+    homeButton.addEventListener(`click`, () => {
+        toDoList.setLiveProjectHome();
+        pageTaskEvent();
+    });
 
-   
+    
 }

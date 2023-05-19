@@ -5,12 +5,13 @@ import { project } from "./project";
 
 export const toDoList = (() =>{
 
-    let projectList = [project("First Project on Load", "mint-green"), project("Second Project", "sunshine")];
+    let projectList = [project("First Project on Load", "mint-green")];
     let currentViewProject = 0;
 
     const getLiveProject = () =>{
         return projectList[currentViewProject];
     }
+
 
     const getProjectList = () => {
         return projectList;
@@ -26,6 +27,10 @@ export const toDoList = (() =>{
         for(let i = 0; i < projectList.length; i++){
             console.log(projectList[i].getProjectName());
         }
+    }
+
+    const setLiveProjectHome = () =>{
+        currentViewProject = 0;
     }
 
     const addProject = (newProject) => {
@@ -45,7 +50,7 @@ export const toDoList = (() =>{
         currentViewProject = newView;
     }
 
-    return {printProjectList, addProject, getProjectList, containsProject, getProjectViewNumber, setProjectViewNumber, getLiveProject, deleteProject}
+    return {printProjectList, addProject, getProjectList, containsProject, getProjectViewNumber, setProjectViewNumber, getLiveProject, deleteProject, setLiveProjectHome}
 
 
 })();
