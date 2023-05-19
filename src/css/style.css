@@ -117,6 +117,7 @@ footer{
 .project-info-container{
 
     display: flex;
+    position: relative;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -143,6 +144,10 @@ div.project-icon{
     padding: 6px;
 }
 
+div.add-project > svg{
+
+    cursor: pointer;
+}
 
 .project-list-item{
     display: flex;
@@ -211,26 +216,35 @@ div.project-icon{
 }
 
 form#add-project-form{
-    display: flex;
+    display: none;
     flex-direction: column;
     color: var(--font-color);
     position: absolute;
-    bottom: 100px;
-    left: 50px;
-    background: #3366ff;
+    top:0;
+    left:210px;
     gap: 10px;
     padding: 10px;
-   
+
+    backdrop-filter: blur(25px) saturate(170%);
+    -webkit-backdrop-filter: blur(25px) saturate(170%);
+    background-color: rgba(33, 33, 33, 0.7);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 form#add-project-form > input{
-    color: orange;
+    border: none;
+    color: var(--font-color);
+    background-color: rgba(255, 255, 255, 0.125);
+    border-radius: 3px;
+    text-indent: 4px;
 }
 form#add-project-form > label{
     display: flex;
     justify-content: flex-start;
     width: auto;
 }
+
 .custom-radios div {
     display: inline-block;
 }
@@ -244,34 +258,53 @@ form#add-project-form > label{
 }
 .custom-radios input[type="radio"] + label span {
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 22px;
+    height: 22px;
     margin: -1px 4px 0 0;
     vertical-align: middle;
     cursor: pointer;
     border-radius: 50%;
-    border: 2px solid #fff;
+   
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
-    line-height: 44px;
+    line-height: 22px;
+}
+
+div.custom-radios{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+div.custom-radios > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* controls the size of the check mark in the add project modal */
+span img{
+    max-height: 8px;
 }
 .custom-radios input[type="radio"] + label span img {
     opacity: 0;
     transition: all 0.3s ease;
 }
 .custom-radios input[type="radio"]#color-1 + label span {
-    background-color: #2ecc71;
+    background-color: #5bc96a;
 }
 .custom-radios input[type="radio"]#color-2 + label span {
-    background-color: #3498db;
+    background-color: #FF8987;
 }
 .custom-radios input[type="radio"]#color-3 + label span {
-    background-color: #f1c40f;
+    background-color: #FFDE58;
 }
 .custom-radios input[type="radio"]#color-4 + label span {
-    background-color: #e74c3c;
+    background-color: #E698EC;
+}
+.custom-radios input[type="radio"]#color-5 + label span {
+    background-color: #1A8BB7;
 }
 .custom-radios input[type="radio"]:checked + label span img {
     opacity: 1;
@@ -282,17 +315,31 @@ form#add-project-form > label{
 
     display: flex;
     flex-direction: row;
-
 }
-
 
 .add-project-bottom-button-container{
     display: flex;
     flex-direction: row;
-
+    justify-content: space-around;
 }
 
+button#cancel-new-project-button, button#submit-new-project-button{
+    background-color: #2c2c2c;
+    color: var(--font-color);
 
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size:12px;
+    margin: 3px;    
+    border-radius: 4px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+
+}
+button#submit-new-project-button{
+    
+    background: #db4d4b;
+}
 
 .edit-project-modal-container{
     position: absolute;
@@ -302,7 +349,7 @@ form#add-project-form > label{
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    height: 140px;
+    height: 170px;
     width: 50%;
     padding: 10px;
 
@@ -332,8 +379,6 @@ form#add-project-form > label{
     cursor: pointer;
     margin-bottom: auto;
 }
-    
-
 
 .edit-project-name-modal-title{
     
@@ -342,6 +387,10 @@ form#add-project-form > label{
     padding: 4px;
     padding-left: 12px;
 }
+#edit-project-modal-input{
+    margin: 8px;;
+}
+
 
 label#edit-project-modal-field-name{
     width: 100px;
@@ -360,52 +409,42 @@ input#edit-project-modal-input{
     align-self: center;
     padding: 3px;
     text-indent: 4px;
-   
 }
 
 .project-modal-bottom-buttons{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-
-    margin-left: auto;
-    margin-right: 10px;
 
 }
 
-button.delete-project{
-    background: #181818;
+button.delete-project, button.close-project, button.project-save{
+    background: #151515;
     color: var(--font-color);
 
     font-family: var(--font-family);
     font-weight: 500;
+    font-size: 16px;
     
-    max-width: 80px;
     
     border-radius: 4px;
     border: none;
     padding: 5px 10px 5px 10px;
+}
+
+div.margin-left-auto-buttons{
+    margin-left: auto;
+}
+
+button.close-project{
+    background: #2c2c2c;
+    margin-left: auto;
 }
 
 button.project-save{
-
     background: #db4d4b;
-    color: var(--font-color);
-
-    font-family: var(--font-family);
-    font-weight: 500;
-    
-    max-width: 80px;
-    
-    border-radius: 4px;
-    border: none;
-    padding: 5px 10px 5px 10px;
-
-    
- 
-
+    margin-left: auto;
 }
-
+    
 
 #add-task-btn{
     margin: 5px;
@@ -436,8 +475,8 @@ button.project-save{
 }
 
 .self-delete{
-
     margin-left: auto;
+    color: red;
 }
 
 .task-description{
@@ -478,7 +517,6 @@ input#description{
     margin-left: auto; 
 }
 
-
 #modal-submit, #cancel-modal{
     background: #db4d4b;
     color: var(--font-color);
@@ -518,8 +556,6 @@ input#description{
     margin-left: 12px;
    
 }
-
-
 
 div.priority-container > label {
 	fill: rgb(209, 209, 209);

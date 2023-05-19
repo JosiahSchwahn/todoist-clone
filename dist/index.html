@@ -21,12 +21,77 @@
 
                 <div class="project-info-container">
                     <div class="project-list-title">Project</div>
-                    <div class="project-number-counter">3 out of 10</div>
+                    <div class="project-number-counter">~</div>
                     <div class="add-project">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.16669 15.8333V10.8333H4.16669V9.16666H9.16669V4.16666H10.8334V9.16666H15.8334V10.8333H10.8334V15.8333H9.16669Z" fill="#676E6C"/>
                         </svg>
                     </div>
+
+                    <form id="add-project-form">
+                        <div class="add-project-form-text">Project Name</div>
+                        <input type="text" id="projectName" placeholder="Project Name" name="projectName">
+                    
+                        <div class="add-project-label">Project Label</div>
+
+                        <div class="custom-radios">
+                            <div>
+                              <input type="radio" id="color-1" name="color" value="mint-green" checked>
+                              <label for="color-1">
+                                <span>
+                                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                                </span>
+                              </label>
+                            </div>
+                            
+                            <div>
+                              <input type="radio" id="color-2" name="color" value="salamon">
+                              <label for="color-2">
+                                <span>
+                                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                                </span>
+                              </label>
+                            </div>
+                            
+                            <div>
+                              <input type="radio" id="color-3" name="color" value="sunshine">
+                              <label for="color-3">
+                                <span>
+                                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                                </span>
+                              </label>
+                            </div>
+                          
+                            <div>
+                              <input type="radio" id="color-4" name="color" value="lavender">
+                              <label for="color-4">
+                                <span>
+                                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                                </span>
+                              </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="color-5" name="color" value="teal">
+                                <label for="color-5">
+                                  <span>
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                                  </span>
+                                </label>
+                              </div>
+                          </div>
+
+                        <div class="add-project-bottom-button-container">
+                            <button type="button" id="cancel-new-project-button">Cancel</button>
+                            <button type="submit" id="submit-new-project-button">Add Project</button>
+                        </div>
+                       
+                    </form>
+
+
+
+
+
                 </div>
 
                 <div class="project-list-items"></div>
@@ -58,8 +123,12 @@
                         <input id="edit-project-modal-input" type="text" placeholder="New Project Name">
 
                         <div class="project-modal-bottom-buttons">
-                             <button class="delete-project">Delete </button>
-                             <button class="project-save">Save</button>
+                             <button class="delete-project">Delete Project</button>
+                             
+                             <div class="margin-left-auto-buttons">
+                               <button class="close-project">Close</button>
+                               <button class="project-save">Save</button>
+                             </div>
                         </div>
                         
 
@@ -69,67 +138,6 @@
                 <div class="project-task-items">
                     <!-- Task Items populate this div-->
                 </div>
-
-                
-                    <form id="add-project-form">
-                        <div class="add-project-form-text">Project Name</div>
-                        <input type="text" id="projectName" name="projectName">
-                    
-                        <div class="add-project-label">Project Label</div>
-
-                        <div class="custom-radios">
-                            <div>
-                              <input type="radio" id="color-1" name="color" value="color-1" checked>
-                              <label for="color-1">
-                                <span>
-                                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                                </span>
-                              </label>
-                            </div>
-                            
-                            <div>
-                              <input type="radio" id="color-2" name="color" value="color-2">
-                              <label for="color-2">
-                                <span>
-                                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                                </span>
-                              </label>
-                            </div>
-                            
-                            <div>
-                              <input type="radio" id="color-3" name="color" value="color-3">
-                              <label for="color-3">
-                                <span>
-                                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                                </span>
-                              </label>
-                            </div>
-                          
-                            <div>
-                              <input type="radio" id="color-4" name="color" value="color-4">
-                              <label for="color-4">
-                                <span>
-                                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                                </span>
-                              </label>
-                            </div>
-                          </div>
-
-
-
-
-
-
-
-            
-
-                        <div class="add-project-bottom-button-container">
-                            <button type="submit">Add Project</button>
-                            <button type="button" id="cancelButton">Cancel</button>
-                        </div>
-                       
-                    </form>
-               
 
 
                 <div class="modal-container"></div>

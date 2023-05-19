@@ -13,7 +13,7 @@ export const UIController = (todolist) => {
     const addTaskBtn = document.querySelector(`#add-task-btn`);
     const editProjectButton = document.querySelector(`.project-name-edit-button`);
     
-    //creates the modal using the modalCreator module
+    //creates the modal using the modalCreator module (smaller modals are in HTML document)
     const modalContainer = document.querySelector(".modal-container");
     modalContainer.appendChild(modalCreator());
     
@@ -28,9 +28,17 @@ export const UIController = (todolist) => {
     const editProjectSaveButton = document.querySelector(`button.project-save`);
     const editProjectNameField = document.querySelector(`input#edit-project-modal-input`);
     const editProjectDeleteButton = document.querySelector(`button.delete-project`);
+
+    //add project modal selectors
+
+    const addProjectForm = document.querySelector(`form#add-project-form`);
+    const addProjectButton = document.querySelector(`div.add-project > svg`);
+    const closeNewProjectButton = document.querySelector(`button#cancel-new-project-button`);
+    const addNewProjectButton = document.querySelector(`button#submit-new-project-button`);
     
 
-
+    // Clears the current viewed task and items and renders the current live viewed project 
+    // by generating taskUI elements and adds them to the project task item to be viewed
     const renderProjectTasks = () =>{    
         const taskContainer = document.querySelector(".project-task-items");
         taskContainer.innerHTML = '';
@@ -40,7 +48,7 @@ export const UIController = (todolist) => {
         });
     }; 
 
-
+    //clears and renders the current live project title
     const renderProjectTitle = () => {
         const projectName = document.querySelector(`.project-name`);
         //clears the HTML to be rerendered
@@ -49,9 +57,8 @@ export const UIController = (todolist) => {
         projectName.innerHTML = getLiveProjectName;
     }
 
- 
 
-    //renders project list and adds eventListeners to all project elements
+    //clears and renders project list and then adds eventListeners to all project elements
     const renderProjectList = () =>{
         const projectListContainer = document.querySelector(".project-list-items");
         let projectList = toDoList.getProjectList();
@@ -75,17 +82,20 @@ export const UIController = (todolist) => {
 
         
     };
-
+    
+    // EventListener for all current live project task items that listens to what 
+    // task item delete button was clicked, removes the task from the current live project
+    // then updates all the relative views.
     const deleteTaskItemListener = () =>{
         const projectTaskItems = document.querySelectorAll("button.self-delete > svg");
         projectTaskItems.forEach((item) =>{
             item.addEventListener("click", (event) =>{
                 event.stopPropagation();      
-                // the item click call is the most messy code i've ever written. There has to be a better way to traverse 
-                // the dom and access the task name than this. Essentially this reads the deleteSVG (delete button) of each task
-                // and returns the task name that can then be passed into our deleteTask inside of our project function to then finally
-                // re-render our task list with the deleted item. This is a common example of programming your self into a corner with
-                // implementation  of the project.
+                // The itemClicked variable is the most messy code i've ever written. There has to be a better way to traverse 
+                // the dom and access the task name than this. Essentially this reads the deleteSVG (delete button) event of each task
+                // and returns the task name of the item that was click. That value then can be passed into our deleteTask inside of 
+                // our project module. Then finally re-render our task list with the deleted item. This is a common example of programming 
+                //your self into a corner with implementation  of the project.
                 const itemClicked = event.target.parentNode.parentNode.parentNode.children[1].children[0].textContent;
                 toDoList.getLiveProject().deleteTask(itemClicked);   
                 //after the item has been deleted, render the new list and add delete functionality to them again.
@@ -94,20 +104,32 @@ export const UIController = (todolist) => {
         })    
     };
 
+    //renders application page
     const pageTaskEvent = () =>{
         renderProjectTasks();
-        renderProjectList();
         deleteTaskItemListener();
         renderProjectTitle();
+        renderProjectList();
     };
 
-
+    //Initial load of the project
     const onPageLoad = (() => {
         renderProjectTasks(toDoList.getLiveProject());
         pageTaskEvent();
     })();
 
-    // ~ event listener for adding a task in the modal - form needs to have a name and description to be added.
+    //function to hide and clear the modal
+    const hideElement = (e) =>{
+        e.preventDefault();
+        modal.reset();
+        modal.style.display = "none";
+    };
+
+
+    //! EVENT LISTENERS
+
+    // ~ event listener for adding a task in the modal
+    // form needs to have a name and description to be added.
      modalAddTaskBtn.addEventListener("click", (e)=>{
         e.preventDefault();
         const formData = new FormData(modal);
@@ -126,34 +148,31 @@ export const UIController = (todolist) => {
     });
 
     
-    //function to hide and clear the modal
-    const hideElement = (e) =>{
-        e.preventDefault();
-        modal.reset();
-        modal.style.display = "none";
-    };
+    
 
-    //closes modal
+    //close button for the add task modal
     modalCancelBtn.addEventListener(`click`, hideElement);    
 
-   //displays task modal
+   //displays the add task modal
     addTaskBtn.addEventListener(`click`, (e) => {
         e.preventDefault();
         modal.style.display = `flex`;
     });
 
+    //edit project button opener
     editProjectButton.addEventListener(`click`, (e) =>{
         e.preventDefault();
         editProjectModal.style.display = 'flex';
         
     });
-
-
+    //close the edit project modal
     editProjectModalClose.addEventListener('click', (e) => {
         e.preventDefault();
+        const textField = document.querySelector(`input#edit-project-modal-input`);
+        textField.value = '';
         editProjectModal.style.display = 'none';
     });
-
+    //change project title 
     editProjectSaveButton.addEventListener('click', (e) => {
         let newProjectName = editProjectNameField.value;
         if(newProjectName === ''){
@@ -166,28 +185,49 @@ export const UIController = (todolist) => {
         }
     });
 
+    //delete project button
     editProjectDeleteButton.addEventListener(`click`, (e)=>{
         e.preventDefault();
         if(toDoList.getProjectList().length === 1){
             alert("You cant delete to zero projects, try again");
             editProjectModal.style.display = 'none';
         }else{
+            alert(`deleting ${toDoList.getLiveProject().getProjectName()}`);
             toDoList.deleteProject(toDoList.getLiveProject());
             editProjectModal.style.display = 'none';
-            pageTaskEvent();
+            renderProjectList();
+        }
+        pageTaskEvent();
+    });
+
+    //open and close add project modal
+
+    addProjectButton.addEventListener(`click`, (e) => {
+        addProjectForm.style.display = 'flex';
+    });
+
+    closeNewProjectButton.addEventListener(`click`, (e) => {
+        addProjectForm.style.display = 'none';
+    
+    });
+
+    //adds a new project with name, color and a validation check
+    addNewProjectButton.addEventListener(`click`, (e)  =>{
+        e.preventDefault()
+        const formData = new FormData(addProjectForm);
+        console.log([formData.get('projectName'), formData.get('color')]);
+        if(formData.get('projectName') === '' ){
+            alert("Project Name Field cannot be empty");
+        } else{
+            toDoList.addProject(project(formData.get('projectName'), formData.get('color')));
+            renderProjectList();
         }
     });
 
-
-
+    
+    
     
 
-   
 
    
 }
-
-
-
-
-  
