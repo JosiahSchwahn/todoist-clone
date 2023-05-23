@@ -42,8 +42,6 @@ export const UIController = (todolist) => {
     const homeButton = document.querySelector(`svg#house`);
 
 
-
-
     // Clears the current viewed task and items and renders the current live viewed project 
     // by generating taskUI elements and adds them to the project task item to be viewed
     const renderProjectTasks = () =>{    
@@ -85,9 +83,19 @@ export const UIController = (todolist) => {
             projectListElement.addEventListener("click", (e) => {
                 //gets the id of the clicked element
                 let id = e.target.parentNode.getAttribute("id");
-                id = parseInt(id.charAt(id.length - 1));
-                toDoList.setProjectViewNumber(id);
-                pageTaskEvent();
+                let id2 = e.target.getAttribute("id");
+                // depending where the user clicks on the project button
+                // both use cases are covered...
+                if(id){
+                    id = parseInt(id.charAt(id.length - 1));
+                    toDoList.setProjectViewNumber(id);
+                    pageTaskEvent();
+                } else{
+                    id2 = parseInt(id2.charAt(id2.length - 1));
+                    toDoList.setProjectViewNumber(id2);
+                    pageTaskEvent();
+                }
+                
             }); 
         });
 
@@ -99,7 +107,10 @@ export const UIController = (todolist) => {
     // then updates all the relative views.
     const deleteTaskItemListener = () =>{
         const projectTaskItems = document.querySelectorAll("button.self-delete > svg");
-        projectTaskItems.forEach((item) =>{
+        const priorityTaskDelete = document.querySelectorAll(`svg.checkMark-SVG`);
+        const deleteButtons = [...projectTaskItems, ...priorityTaskDelete];
+
+        deleteButtons.forEach((item) =>{
             item.addEventListener("click", (event) =>{
                 event.stopPropagation();      
                 // The itemClicked variable is the most messy code i've ever written. There has to be a better way to traverse 
@@ -108,14 +119,15 @@ export const UIController = (todolist) => {
                 // our project module. Then finally re-render our task list with the deleted item. This is a common example of programming 
                 //your self into a corner with implementation  of the project.
                 const itemClicked = event.target.parentNode.parentNode.parentNode.children[1].children[0].textContent;
+                console.log(itemClicked);
                 toDoList.getLiveProject().deleteTask(itemClicked);   
                 //after the item has been deleted, render the new list and add delete functionality to them again.
                 pageTaskEvent();
             });
-        })    
-    };
+        });
+    }
 
-    //renders application page
+    //renders application
     const pageTaskEvent = () =>{
         renderProjectCounter();
         renderProjectTasks();
@@ -185,6 +197,7 @@ export const UIController = (todolist) => {
         textField.value = '';
         editProjectModal.style.display = 'none';
     });
+
     //change project title 
     editProjectSaveButton.addEventListener('click', (e) => {
         let newProjectName = editProjectNameField.value;
@@ -215,14 +228,14 @@ export const UIController = (todolist) => {
     });
 
     //open and close add project modal
-
     addProjectButton.addEventListener(`click`, (e) => {
         addProjectForm.style.display = 'flex';
     });
 
     closeNewProjectButton.addEventListener(`click`, (e) => {
         addProjectForm.style.display = 'none';
-    
+        const projectInputField = document.querySelector(`input#projectName`);
+        projectInputField.value = ``; 
     });
 
     //adds a new project with name, color and a validation check
@@ -233,7 +246,7 @@ export const UIController = (todolist) => {
             alert("Project Name Field cannot be empty");
         } 
         else if(toDoList.getProjectList().length >= 10){
-            alert("Max 10 projects")
+            alert("M10 Projects Max");
         }
         else{
             if(toDoList.containsProject(formData.get('projectName'))){
@@ -249,7 +262,7 @@ export const UIController = (todolist) => {
     });
 
     //eventHandler for opening and closing the project tab
-    projectTabHamburgerButton.addEventListener('click', ()=> {
+    projectTabHamburgerButton.addEventListener('click', () => {
         const projectViewContainer = document.querySelector(`#project-view-container`);
         let currentDisplay = window.getComputedStyle(projectViewContainer).display;
         if (currentDisplay === 'flex') {

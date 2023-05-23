@@ -16,29 +16,53 @@ export const taskItemUICreator = (taskItem) => {
     prioSVG.setAttribute("height", "18");
     prioSVG.setAttribute("viewBox", "0 0 12 12");
     prioSVG.setAttribute("fill", "none");
+    prioSVG.classList.add("task-element-priority-button");
 
     // create a new circle element inside the SVG element
     const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     circle.setAttribute("cx", "6");
     circle.setAttribute("cy", "6");
     circle.setAttribute("r", "5.5");
+    circle.id = "prio-ID";
+
+    let svgColor;
 
     if(taskItem.getPriority() === 'priority-1'){
+        svgColor = "#ef7364";
         circle.setAttribute("fill", "#3a2625");
-        circle.setAttribute("stroke", "#ef7364");   
+        circle.setAttribute("stroke", svgColor);   
     } else if(taskItem.getPriority() === 'priority-2'){
+        svgColor = "#f68e0f";
         circle.setAttribute("fill", "#352d22");
-        circle.setAttribute("stroke", "#f68e0f");  
+        circle.setAttribute("stroke", svgColor);  
     } else if(taskItem.getPriority() === 'priority-3'){
+        svgColor = "#4299f9";
         circle.setAttribute("fill", "#343b45");
-        circle.setAttribute("stroke", "#4299f9");  
+        circle.setAttribute("stroke", svgColor);  
     } else{
+        svgColor = "#6d6d6d";
         circle.setAttribute("fill", "#202020");
-        circle.setAttribute("stroke", "#6d6d6d");  
+        circle.setAttribute("stroke", svgColor);  
     } 
+
+    const checkMarkSVG = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+
+    checkMarkSVG.classList.add("checkMark-SVG");
+    checkMarkSVG.setAttributeNS(null, "width", "10");
+    checkMarkSVG.setAttributeNS(null, "height", "10");
+    checkMarkSVG.setAttributeNS(null, "viewBox", "0 0 16 16");
+    checkMarkSVG.setAttributeNS(null, "fill", "none");
+
+    var checkMarkPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+    checkMarkPath.setAttributeNS(null, "d", "M7.71875 14.25L2.375 8.90624L3.21456 8.06668L7.71875 12.5703L15.7854 4.50418L16.625 5.34374L7.71875 14.25Z");
+    checkMarkPath.setAttributeNS(null, "fill", svgColor);
+
+    checkMarkSVG.appendChild(checkMarkPath);
 
     // append the circle element to the SVG element, and the SVG element to the button element
     prioSVG.appendChild(circle);
+    button.appendChild(checkMarkSVG);
     button.appendChild(prioSVG);
 
     // append the button element to the priority container

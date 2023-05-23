@@ -19,7 +19,7 @@
     3.1px 17.4px 13px rgba(246, 0, 0, 0.097), 4.4px 24.3px 24.2px rgba(0, 0, 0, 0.116), 9px 50px 58px rgba(0, 0, 0, 0.16);
 }
 
-/*removing dafault button styling*/
+/*removing default button styling*/
 
 button{
     border: none;
@@ -31,9 +31,6 @@ button{
     text-decoration: none;
     cursor: pointer;
 }
-
-
-
 
 .active-flex{
     display: flex;
@@ -63,22 +60,16 @@ body{
     font-weight: 500; 
 }
 
-header{
-
-    
+header{ 
     background-color: var(--secondary-color);
     box-shadow: var(--box-shadow);
-
     box-sizing: border-box;
     padding-block: 10px;
     padding-inline: 20px;
-
     height: var(--header-sizing);
-
     display: flex;
     justify-content: space-between;
 }
-
 
 .left-header-buttons{
     display: flex;
@@ -100,9 +91,13 @@ svg#house:hover, svg#hamburger:hover, svg#profile:hover{
     background-color: var(--primary-color);
     height: var(--body-sizing);
     margin: 0px;
-
     display: flex;
 }
+
+.profile-modal{
+    
+}
+
 
 footer{
     
@@ -166,12 +161,19 @@ div.project-number-counter{
     background-color: var(--gray-font-color);
     color: var(--font-color);
     padding: 6px;
-    border-radius: 4px;;
+    border-radius: 4px;
 }
 
 div.add-project > svg{
 
     cursor: pointer;
+}
+
+div.add-project > svg:hover{
+    background-color: var(--font-color);
+    border-radius: 4px;
+    color: white;
+    transition: 0.5s ease;
 }
 
 .project-list-item{
@@ -222,6 +224,38 @@ div.add-project > svg{
     padding-left: 80px;
     padding-right: 120px;
 }
+
+div#item-container{
+    padding-top: 6px;
+}
+
+div#item-container:hover{
+    
+    background-color: #2f2f2f;
+    border-radius: 4px;
+    transition: background-color .5s ease;
+}
+
+/* Allows SVG layering for the checkMark */
+.task-priority-container > button{
+    position: relative;
+
+}
+
+/* uses the parent container and when it gets hovered, 
+   reveal the SVG checkMark */
+.task-priority-container:hover svg.checkMark-SVG{
+    opacity: 100;
+    transition: opacity .5s ease;
+}
+
+svg.checkMark-SVG{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    opacity: 0;
+}
+
 
 .task-list-title{
     display: flex;
@@ -370,7 +404,6 @@ button#cancel-new-project-button, button#submit-new-project-button{
 
 }
 button#submit-new-project-button{
-    
     background: #db4d4b;
 }
 
@@ -382,7 +415,7 @@ button#submit-new-project-button{
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    height: 170px;
+    height: 150px;
     width: 50%;
     padding: 10px;
 
@@ -456,10 +489,10 @@ button.delete-project, button.close-project, button.project-save{
 
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 12px;
     
     
-    border-radius: 4px;
+    border-radius: 6px;
     border: none;
     padding: 5px 10px 5px 10px;
 }
@@ -497,7 +530,6 @@ button.project-save{
     justify-content: flex-start;
     gap: 8px;
     margin: 10px 0px 10px 0px;
-
     border-bottom: solid 1px rgb(67, 67, 67);
 }
 
