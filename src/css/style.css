@@ -53,11 +53,13 @@ form.rating{
     
 }
 
+
 body{  
     margin:0px;
     color: var(--font-color);
     font-family: var(--font-family);
     font-weight: 500; 
+    
 }
 
 header{ 
@@ -79,6 +81,9 @@ header{
 #house{
     margin-left: 10px;
 }
+.right-header-icon{
+    position: relative;
+}
 svg#house:hover, svg#hamburger:hover, svg#profile:hover{
     cursor: pointer;
     box-sizing: border-box;
@@ -95,8 +100,15 @@ svg#house:hover, svg#hamburger:hover, svg#profile:hover{
 }
 
 .profile-modal{
-    
+    position: absolute;
+    right: 50px;
 }
+
+.profile-settings, .profile-theme, .profile-activity-log, .profile-print, .profile-integrations, .profile-upgrade-to-pro, .profile-upgrade-to-business, .profile-downnload-apps, .profile-logout, .profile-general-info{
+    display: flex;
+    flex-direction: row;
+}
+
 
 
 footer{
