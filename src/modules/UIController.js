@@ -13,7 +13,6 @@ export const UIController = (todolist) => {
     const addTaskBtn = document.querySelector(`#add-task-btn`);
     const editProjectButton = document.querySelector(`.project-name-edit-button`);
 
-    
     //creates the modal using the modalCreator module (smaller modals are in HTML document)
     const modalContainer = document.querySelector(".modal-container");
     modalContainer.appendChild(modalCreator());
@@ -41,6 +40,10 @@ export const UIController = (todolist) => {
     const projectTabHamburgerButton = document.querySelector(`svg#hamburger`);
     const homeButton = document.querySelector(`svg#house`);
 
+    //profile modal button
+    const profileButton = document.querySelector(`svg#profile`);
+    
+
 
     // Clears the current viewed task and items and renders the current live viewed project 
     // by generating taskUI elements and adds them to the project task item to be viewed
@@ -56,18 +59,18 @@ export const UIController = (todolist) => {
     //clears and renders the current live project title
     const renderProjectTitle = () => {
         const projectName = document.querySelector(`.project-name`);
-        //clears the HTML to be rerendered
         projectName.innerHTML = '';
         const getLiveProjectName = toDoList.getLiveProject().getProjectName();
         projectName.innerHTML = getLiveProjectName;
     }
 
+    //renders the project counter -> called with the pageTaskEvent() function
     const renderProjectCounter = () => {
         const projectCounter = document.querySelector(`div.project-number-counter`);
         projectCounter.innerHTML = `${toDoList.getProjectList().length} out of 10`;
     }
 
-    //clears and renders project list and then adds eventListeners to all project elements
+    //clears and renders project list and then adds eventListeners to all project task item elements
     const renderProjectList = () =>{
         const projectListContainer = document.querySelector(".project-list-items");
         let projectList = toDoList.getProjectList();
@@ -94,15 +97,12 @@ export const UIController = (todolist) => {
                     id2 = parseInt(id2.charAt(id2.length - 1));
                     toDoList.setProjectViewNumber(id2);
                     pageTaskEvent();
-                }
-                
+                } 
             }); 
         });
-
-        
     };
     
-    // EventListener for all current live project task items that listens to what 
+    // EventListener for all current live project task items. Listens to what 
     // task item delete button was clicked, removes the task from the current live project
     // then updates all the relative views.
     const deleteTaskItemListener = () =>{
@@ -113,11 +113,10 @@ export const UIController = (todolist) => {
         deleteButtons.forEach((item) =>{
             item.addEventListener("click", (event) =>{
                 event.stopPropagation();      
-                // The itemClicked variable is the most messy code i've ever written. There has to be a better way to traverse 
+                // The itemClicked variable is messy code. There's better way to traverse 
                 // the dom and access the task name than this. Essentially this reads the deleteSVG (delete button) event of each task
                 // and returns the task name of the item that was click. That value then can be passed into our deleteTask inside of 
-                // our project module. Then finally re-render our task list with the deleted item. This is a common example of programming 
-                //your self into a corner with implementation  of the project.
+                // our project module. Then finally re-render our task list with the deleted item.
                 const itemClicked = event.target.parentNode.parentNode.parentNode.children[1].children[0].textContent;
                 console.log(itemClicked);
                 toDoList.getLiveProject().deleteTask(itemClicked);   
@@ -151,10 +150,10 @@ export const UIController = (todolist) => {
     };
 
 
-    //! EVENT LISTENERS
+    //! EVENT HANDLERS
 
-    // ~ event listener for adding a task in the modal
-    // form needs to have a name and description to be added.
+    // eventHandler for adding a task in the modal
+    // with form validation
      modalAddTaskBtn.addEventListener("click", (e)=>{
         e.preventDefault();
         const formData = new FormData(modal);
@@ -169,28 +168,26 @@ export const UIController = (todolist) => {
             //renders the new list
             pageTaskEvent();
             hideElement(e);
-        }
+        };
     });
 
-    
-    
-
-    //close button for the add task modal
+    //eventHandler that closes button for the add task modal
     modalCancelBtn.addEventListener(`click`, hideElement);    
 
-   //displays the add task modal
+   //eventHandler that displays the add task modal
     addTaskBtn.addEventListener(`click`, (e) => {
         e.preventDefault();
         modal.style.display = `flex`;
     });
 
-    //edit project button opener
+    //eventHandler for opening project button
     editProjectButton.addEventListener(`click`, (e) =>{
         e.preventDefault();
         editProjectModal.style.display = 'flex';
         
     });
-    //close the edit project modal
+
+    //eventHandler to clear edit project modal when closed
     editProjectModalClose.addEventListener('click', (e) => {
         e.preventDefault();
         const textField = document.querySelector(`input#edit-project-modal-input`);
@@ -198,7 +195,7 @@ export const UIController = (todolist) => {
         editProjectModal.style.display = 'none';
     });
 
-    //change project title 
+    //eventHandler when user wants to change project title
     editProjectSaveButton.addEventListener('click', (e) => {
         let newProjectName = editProjectNameField.value;
         if(newProjectName === ''){
@@ -211,7 +208,7 @@ export const UIController = (todolist) => {
         }
     });
 
-    //delete project button
+    //delete project eventHandler for the edit project modal
     editProjectDeleteButton.addEventListener(`click`, (e)=>{
         e.preventDefault();
         if(toDoList.getProjectList().length === 1){
@@ -227,18 +224,19 @@ export const UIController = (todolist) => {
         pageTaskEvent();
     });
 
-    //open and close add project modal
-    addProjectButton.addEventListener(`click`, (e) => {
+    //opens the add project modal
+    addProjectButton.addEventListener(`click`, () => {
         addProjectForm.style.display = 'flex';
     });
 
-    closeNewProjectButton.addEventListener(`click`, (e) => {
+    //clears new project form when user closes the add project modal
+    closeNewProjectButton.addEventListener(`click`, () => {
         addProjectForm.style.display = 'none';
         const projectInputField = document.querySelector(`input#projectName`);
         projectInputField.value = ``; 
     });
 
-    //adds a new project with name, color and a validation check
+    //adds a new project with name and label with a validation check
     addNewProjectButton.addEventListener(`click`, (e)  =>{
         e.preventDefault()
         const formData = new FormData(addProjectForm);
@@ -272,11 +270,20 @@ export const UIController = (todolist) => {
         }
     });
 
-    //eventHandler for home button
+    //eventHandler for home button -> goes to first "home" project
     homeButton.addEventListener(`click`, () => {
         toDoList.setLiveProjectHome();
         pageTaskEvent();
     });
 
-    
+    //display eventHandler for profile modal
+    profileButton.addEventListener(`click`, (e) =>{
+        const profileModal = document.querySelector(`.profile-modal`);
+        let currentDisplay = window.getComputedStyle(profileModal).display;
+        if (currentDisplay === 'block') {
+            profileModal.style.display = 'none';
+        } else {
+            profileModal.style.display = 'block';
+        }
+    });
 }

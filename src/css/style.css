@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-:root{
-    
+:root{ 
     --header-sizing: clamp(20px, 4.5vh, 200px);
     --footer-sizing: clamp(20px, 4.5vh, 200px);
     --body-sizing: calc(100vh - (var(--header-sizing) + var(--footer-sizing)));
@@ -20,16 +19,18 @@
 }
 
 /*removing default button styling*/
-
 button{
     border: none;
     padding: 0px;
     background-color: transparent;
-  
     margin: 3px;
-
     text-decoration: none;
     cursor: pointer;
+}
+
+hr{
+    margin: 0px;
+    border: solid .5px #484848;
 }
 
 .active-flex{
@@ -37,29 +38,24 @@ button{
 }
 
 form.rating{
-    
     display: none;
     flex-direction: column;
     justify-content: space-between;
     height: 80px;
-    width: clamp(400px, 100%, 1500px);
 
     margin-bottom: 8px;
 
     border: solid 1px var(--gray-font-color);
     border: solid 1px var(--gray-font-color);
-    padding: 10px 10px 10px 10px;
+    padding: 12px 14px 12px 14px;
     border-radius: 10px;
-    
 }
-
 
 body{  
     margin:0px;
     color: var(--font-color);
     font-family: var(--font-family);
-    font-weight: 500; 
-    
+    font-weight: 500;    
 }
 
 header{ 
@@ -78,12 +74,15 @@ header{
     align-items: center;
     justify-content: center;
 }
+
 #house{
     margin-left: 10px;
 }
+
 .right-header-icon{
     position: relative;
 }
+
 svg#house:hover, svg#hamburger:hover, svg#profile:hover{
     cursor: pointer;
     box-sizing: border-box;
@@ -100,27 +99,112 @@ svg#house:hover, svg#hamburger:hover, svg#profile:hover{
 }
 
 .profile-modal{
+    display: none;
     position: absolute;
-    right: 50px;
+    z-index: 2;
+    flex-direction: column;
+
+    right: -10px;
+    top: 30px;
+    height: 440px;
+    width: 276px;
+    background-color: #282828;
+    border: solid 1px #484848;
+    border-radius: 10px;
+    box-shadow:
+    0.7px 1.1px 1.3px rgba(0, 0, 0, 0.013),
+    1.7px 2.6px 3px rgba(0, 0, 0, 0.019),
+    3px 4.7px 5.3px rgba(0, 0, 0, 0.023),
+    5px 7.9px 8.8px rgba(0, 0, 0, 0.027),
+    8.2px 13px 14.5px rgba(0, 0, 0, 0.031),
+    14.3px 22.7px 25.4px rgba(0, 0, 0, 0.037),
+    31px 49px 55px rgba(0, 0, 0, 0.05);
 }
 
-.profile-settings, .profile-theme, .profile-activity-log, .profile-print, .profile-integrations, .profile-upgrade-to-pro, .profile-upgrade-to-business, .profile-downnload-apps, .profile-logout, .profile-general-info{
+.profile-settings, .profile-theme, .profile-activity-log, .profile-print, .profile-integrations, .profile-upgrade-to-pro, .profile-upgrade-to-business, .profile-download-apps, .profile-logout{
     display: flex;
     flex-direction: row;
+    cursor: pointer;
+    align-items: center;
+    height: 32px;
+    padding: 2px;
 }
 
+.profile-settings:hover, .profile-theme:hover, .profile-activity-log:hover, .profile-print:hover, .profile-integrations:hover, .profile-upgrade-to-pro:hover, .profile-upgrade-to-business:hover, div.profile-download-apps:hover, .profile-logout:hover{    
+    background-color: var(--gray-font-color);
 
+}
+
+div.profile-svg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    padding: 6px;
+}
+
+div.profile-text{
+    margin-left: 16px;
+}
+
+.profile-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #2c2c2c;
+    font-size: 24px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #202020;
+}
+
+.profile-text-info{
+    margin-left: 1.5rem;
+}
+
+.profile-user-name{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.profile-email{
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gray-font-color);
+    margin-top: 4px;
+}
+
+.profile-general-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px;    
+}
+
+div.profile-logout > div.profile-svg{
+    margin-left: 3px;
+}
+
+div.profile-general-info > div.profile-svg{
+    font-size: 10px;
+    font-weight: 300;
+}
+
+div.profile-general-info > div.profile-text{
+    font-size: 10px;
+    font-weight: 500;
+}
 
 footer{
     
-    /* styling*/
     color: var(--red-color);
     font-weight: 200;
     font-size: 12px;
     background-color: var(--secondary-color);
     height: var(--footer-sizing);
-
-    /*formatting*/
 
     display: flex;
     align-items: center;
@@ -149,7 +233,6 @@ footer{
     justify-content: space-between;
     
     margin-bottom: 8px;
-
 }
 
 .add-project{
@@ -206,9 +289,9 @@ div.add-project > svg:hover{
     transition: 0.5s ease;
 }
 
-
 .project-button{
     margin: 0px;
+    padding: 4px;
     margin-left: 6px;
     font-size: 14px;
     font-weight: 500;
@@ -222,9 +305,7 @@ div.add-project > svg:hover{
     color: var(--gray-font-color);
 }
 
-
 #task-view-container{
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -241,8 +322,7 @@ div#item-container{
     padding-top: 6px;
 }
 
-div#item-container:hover{
-    
+div#item-container:hover{ 
     background-color: #2f2f2f;
     border-radius: 4px;
     transition: background-color .5s ease;
@@ -251,7 +331,6 @@ div#item-container:hover{
 /* Allows SVG layering for the checkMark */
 .task-priority-container > button{
     position: relative;
-
 }
 
 /* uses the parent container and when it gets hovered, 
@@ -268,14 +347,12 @@ svg.checkMark-SVG{
     opacity: 0;
 }
 
-
 .task-list-title{
     display: flex;
     position: relative;
     flex-direction: row;
     justify-content: space-between;
     
-
 }
 
 .project-name{
@@ -286,11 +363,10 @@ svg.checkMark-SVG{
     height: 30px;
 }
 
-.project-name-edit-button > svg{
-    
-    display: block;
+.project-name-edit-butto{
+    display: flex;
+    align-items: center;
     margin: 0 auto;
- 
     cursor: pointer;
 }
 
@@ -389,7 +465,6 @@ span img{
     opacity: 1;
 }
 
-
 .add-project-radio-container {
 
     display: flex;
@@ -469,7 +544,6 @@ button#submit-new-project-button{
     margin: 8px;;
 }
 
-
 label#edit-project-modal-field-name{
     width: 100px;
     height: 1rem;
@@ -502,8 +576,7 @@ button.delete-project, button.close-project, button.project-save{
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 12px;
-    
-    
+ 
     border-radius: 6px;
     border: none;
     padding: 5px 10px 5px 10px;
@@ -523,7 +596,6 @@ button.project-save{
     margin-left: auto;
 }
     
-
 #add-task-btn{
     margin: 5px;
     color: var(--gray-font-color);
@@ -561,7 +633,6 @@ button.self-delete > svg > path:hover{
 }
 
 .task-description{
-
     font-weight: 200;
     font-size: 12px;
     margin-bottom: 12px;
@@ -575,13 +646,16 @@ label{
     align-items: center;  
 }
 
-input#task-name, input#description{
+input#task-name,input#description{
     border: none;
     border-radius: 3px;
-    color: var(--gray-font-color);
     background-color: transparent;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 14px;
+}
+input#description{
     font-size: 12px;
+    color: var(--gray-font-color);
 }
 
 .text-input-container{
@@ -604,7 +678,7 @@ input#description{
 
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 14px;
     margin: 3px;    
     border-radius: 4px;
     border: none;
@@ -613,9 +687,7 @@ input#description{
 }
 
 #cancel-modal{
-
     background: #2c2c2c;
- 
 }
     
 #radio-priority-1, #radio-priority-2, #radio-priority-3, #radio-priority-4{
@@ -643,8 +715,6 @@ div.priority-container > label {
 	height: 1rem;
 	width: 1rem;
 }
-
-
 
 label > input[type="radio"] {
 	position: absolute;

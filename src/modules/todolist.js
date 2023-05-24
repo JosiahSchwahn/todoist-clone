@@ -1,8 +1,6 @@
 import { taskItem } from "./task";
 import { project } from "./project";
 
-
-
 export const toDoList = (() =>{
 
     let projectList = [project("First Project on Load", "mint-green")];
