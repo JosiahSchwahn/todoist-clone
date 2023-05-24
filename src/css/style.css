@@ -69,6 +69,22 @@ header{
     justify-content: space-between;
 }
 
+.header-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 150px;
+}
+
+div.header-text > a{
+    display: flex;
+    align-items: center;
+}
+
+div.header-text > svg:hover{
+    cursor: pointer;
+}
+
 .left-header-buttons{
     display: flex;
     align-items: center;
@@ -83,7 +99,7 @@ header{
     position: relative;
 }
 
-svg#house:hover, svg#hamburger:hover, svg#profile:hover{
+svg#house:hover, svg#hamburger:hover, svg#profile:hover, div.header-text > a > svg:hover{
     cursor: pointer;
     box-sizing: border-box;
     background-color: var(--gray-font-color);
@@ -312,7 +328,6 @@ div.add-project > svg:hover{
     box-sizing: border-box;
 
     background-color: var(--primary-color);   
-
     flex: 1 1 80%;
     padding-left: 80px;
     padding-right: 120px;
@@ -352,21 +367,23 @@ svg.checkMark-SVG{
     position: relative;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 15px;
     
 }
 
 .project-name{
+    box-sizing: border-box;
     font-size: 28px;
-    padding-bottom: 18px;
     display: flex;
     align-items: center;
-    height: 30px;
+    min-height: 30px;
+    min-width: 50px;
 }
 
-.project-name-edit-butto{
+.project-name-edit-button{
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 0 auto;
     cursor: pointer;
 }
 
