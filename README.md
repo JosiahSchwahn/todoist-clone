@@ -83,21 +83,20 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
 
 1. Clone the repo
    ```sh
    git clone https://github.com/JosiahSchwahn/todoist-clone
    ```
-2. Install NPM packages
+2. Install NPM packages from Node Modules
    ```sh
    npm install
    ```
-3. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Run NPM Script Build
+   ```sh
+   npm run build
    ```
+4. Run local host from HTML file
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
