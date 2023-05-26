@@ -176,6 +176,11 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
+* [The Odin Project <3](https://www.theodinproject.com/dashboard)
+* [MDN](https://developer.mozilla.org/en-US/)
+* [Glass UI](https://ui.glass/generator/)
+* [notion](https://www.notion.so/)
+
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [Choose an Open Source License](https://choosealicense.com)
@@ -192,9 +197,7 @@ Use this space to list resources you find helpful and would like to give credit 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-* [The Odin Project <3](https://www.theodinproject.com/dashboard)
-* [MDN](https://developer.mozilla.org/en-US/)
-* [Glass UI](https://ui.glass/generator/)
+
 
 
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
@@ -205,17 +208,17 @@ Use this space to list resources you find helpful and would like to give credit 
 [product-screenshot-figma]: screenshots/figma-icon-screenshot.png
 [product-screenshot-add-task]: screenshots/add-task-modal-screenshot.png
 
-[webpack]: https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white
-[figma]: https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white
-[adobe creative cloud]: https://img.shields.io/badge/Adobe%20Creative%20Cloud-DA1F26?style=for-the-badge&logo=Adobe%20Creative%20Cloud&logoColor=white
-[javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
-[html5]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
-[css3]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
+[webpack-shield]: https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white
+[figma-shield]: https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white
+[adobe-creative-cloud-shield]: https://img.shields.io/badge/Adobe%20Creative%20Cloud-DA1F26?style=for-the-badge&logo=Adobe%20Creative%20Cloud&logoColor=white
+[javascript-shield]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[html5-shield]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[css3-shield]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
 
-[webpack-url]:
-[figma-url]:
-[adobe creative cloud-url]:
-[javascript-url]:
-[css-url]:
+[webpack-url]: https://webpack.js.org/
+[figma-url]: https://www.figma.com/
+[adobe-creative-cloud-url]: https://www.adobe.com/creativecloud.html
+[javascript-url]: https://www.javascript.com/
+[css-url]: https://www.w3.org/Style/CSS/Overview.en.html
 [html-url]: https://html.com/
 
