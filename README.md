@@ -62,8 +62,8 @@ Learning Objectives
 
 * [![Webpack][webpack-shield]][webpack-url]
 * [![JavaScript][javascript-shield]][javascript-url]
-* [![HTML][html-shield]][html-url]
-* [![CSS3][css-shield]][css-url]
+* [![HTML][html5-shield]][html5-url]
+* [![CSS3][css3-shield]][css3-url]
 * [![Figma][figma-shield]][figma-url]
 * [![Adobe Creative Cloud][adobe-creative-cloud-shield]][adobe-creative-cloud-url]
 
@@ -220,6 +220,6 @@ Use this space to list resources you find helpful and would like to give credit 
 [figma-url]: https://www.figma.com/
 [adobe-creative-cloud-url]: https://www.adobe.com/creativecloud.html
 [javascript-url]: https://www.javascript.com/
-[css-url]: https://www.w3.org/Style/CSS/Overview.en.html
-[html-url]: https://html.com/
+[css3-url]: https://www.w3.org/Style/CSS/Overview.en.html
+[html5-url]: https://html.com/
 
