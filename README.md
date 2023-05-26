@@ -210,5 +210,12 @@ Use this space to list resources you find helpful and would like to give credit 
 [adobe creative cloud]: https://img.shields.io/badge/Adobe%20Creative%20Cloud-DA1F26?style=for-the-badge&logo=Adobe%20Creative%20Cloud&logoColor=white
 [javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [html5]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
-[css3]:https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
+[css3]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
+
+[webpack-url]:
+[figma-url]:
+[adobe creative cloud-url]:
+[javascript-url]:
+[css-url]:
+[html-url]: https://html.com/
 
