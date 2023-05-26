@@ -35,13 +35,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Todoist CLone Main Screenshot]{:height="200px" width="300px"}][product-screenshot-main]
+![Todoist CLone Main Screenshot][product-screenshot-main]
 ![Profile Modal Screenshot][product-screenshot-profile-modal]
 ![Add Task Modal Screenshot][product-screenshot-add-task]
 ![Add Project Modal Screenshot][product-screenshot-add-project]
 ![Figma Design Board Screenshot][product-screenshot-figma]
 
-[![Product Screenshot](screenshots/add-project-modal-screenshot.png){:height="200px" width="300px"}][product-screenshot-add-project]
+
 
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
@@ -203,7 +203,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/josiah-schwahn-b58522184/
 
-[product-screenshot-main]: screenshots/todoist-clone-screenshot.png
+[product-screenshot-main]: (screenshots/todoist-clone-screenshot.png =300x200)
 [product-screenshot-profile-modal]: screenshots/profile-settings-modal-screenshot.png
 [product-screenshot-figma]: screenshots/figma-icon-screenshot.png
 [product-screenshot-add-task]: screenshots/add-task-modal-screenshot.png
