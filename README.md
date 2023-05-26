@@ -34,7 +34,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[![Todoist Clone Main Screenshot](screenshots/todoist-clone-screenshot.png =300x200)][product-screenshot-main]
+<img src="screenshots/todoist-clone-screenshot.png" alt="Todoist_CLone_Main_Screenshot" width="200px" height="200px">
 ![Todoist CLone Main Screenshot][product-screenshot-main]
 ![Profile Modal Screenshot][product-screenshot-profile-modal]
 ![Add Task Modal Screenshot][product-screenshot-add-task]
