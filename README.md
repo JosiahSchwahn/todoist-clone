@@ -60,12 +60,12 @@ Learning Objectives
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* Webpack
-* ES6 Javascript
-* CSS
-* HTML 
-* FIGMA
+![webpack][webpack]
+![JavaScript][javascript]
+![HTML5][html5]
+![CSS3][css3]
+![figma][figma]
+![adove creative cloud][adove creative cloud]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -192,11 +192,11 @@ Use this space to list resources you find helpful and would like to give credit 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+* [The Odin Project <3](https://www.theodinproject.com/dashboard)
+* [MDN](https://developer.mozilla.org/en-US/)
+* [Glass UI](https://ui.glass/generator/)
+
+
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/josiah-schwahn-b58522184/
@@ -205,4 +205,10 @@ Use this space to list resources you find helpful and would like to give credit 
 [product-screenshot-figma]: screenshots/figma-icon-screenshot.png
 [product-screenshot-add-task]: screenshots/add-task-modal-screenshot.png
 
+[webpack]: https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white
+[figma]: https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white
+[adobe creative cloud]: https://img.shields.io/badge/Adobe%20Creative%20Cloud-DA1F26?style=for-the-badge&logo=Adobe%20Creative%20Cloud&logoColor=white
+[javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[html5]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[css3]:https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
 
