@@ -59,8 +59,9 @@ Learning Objectives
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
-
-![webpack][webpack]
+* [![JQuery][JQuery.com]][JQuery-url]
+* [![webpack][webpack]][webpack-url]
+* ![JavaScript][javascript]]
 ![JavaScript][javascript]
 ![HTML5][html5]
 ![CSS3][css3]
