@@ -65,7 +65,7 @@ Learning Objectives
 ![HTML5][html5]
 ![CSS3][css3]
 ![figma][figma]
-![adove creative cloud][adove creative cloud]
+![adobe creative cloud][adobe creative cloud]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
