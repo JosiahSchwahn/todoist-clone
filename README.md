@@ -59,17 +59,14 @@ Learning Objectives
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
-[![Contributors][contributors-shield]][contributors-url]
-* [![JavaScript][javascript-shield]][javascript-url]
 
-* [![JQuery][JQuery.com]][JQuery-url]
-* [![webpack][webpack]][webpack-url]
-* ![JavaScript][javascript]]
-![JavaScript][javascript]
-![HTML5][html5]
-![CSS3][css3]
-![figma][figma]
-![adobe creative cloud][adobe creative cloud]
+* [![Webpack][webpack-shield]][webpack-url]
+* [![JavaScript][javascript-shield]][javascript-url]
+* [![HTML][html-shield]][html-url]
+* [![CSS3][css-shield]][css-url]
+* [![Figma][figma-shield]][figma-url]
+* [![Adobe Creative Cloud][adobe-creative-cloud-shield]][adobe-creative-cloud-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
