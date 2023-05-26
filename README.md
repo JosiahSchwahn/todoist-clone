@@ -52,11 +52,11 @@ Learning Objectives
 * Javascript ES6 -> Closure, modules, design patterns (module pattern, factory functions, singleton pattern*), OOP princples.
 * Package Managers (NPM) ->  dependencies, NPM scripts (npm run build), repository of plugins!
 * Webpack -> Module bundler, loaders, entry and output points, transpilers, dependency tree for your JS/images/JSON/CSV files.
-
+* Figma -> UX/UI design, power of SVGs, designing custom icons and images.
+* Advanced CSS -> :root properties, responsive web design, advanced query selectors and animations.
+* Advanced HTML -> Form validation, transforms and transitions (keyframes).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
