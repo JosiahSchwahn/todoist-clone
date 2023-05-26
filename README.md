@@ -35,7 +35,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](/screenshots/Screen Shot 2023-05-24 at 1.01.26 PM.png?raw=true "Optional Title")
+[![Product Name Screen Shot][product-screenshot]](/screenshots/ScreenShot2023-05-24at1.01.26PM.png?raw=true "Optional Title")
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
