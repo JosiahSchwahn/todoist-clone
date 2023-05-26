@@ -48,10 +48,10 @@
 "The main goal of this project was to master vanilla JavaScript by cloning one of my all-time favorite web applications, "Todoist." It's a super effective task tracking app that was able to manage all the small tasks I needed to complete in a day.
 I wanted to be able to fully clone a website before jumping into any frameworks and additional tech abstractions to solidify my foundation and understanding of web development."
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+Learning Objectives
+* Javascript ES6 -> Closure, modules, design patterns (module pattern, factory functions, singleton pattern*), OOP princples.
+* Package Managers (NPM) ->  dependencies, NPM scripts (npm run build), repository of plugins!
+* Webpack -> Module bundler, loaders, entry and output points, transpilers, dependency tree for your JS/images/JSON/CSV files.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
