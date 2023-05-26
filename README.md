@@ -34,13 +34,17 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<div></div>
 
 ![Todoist CLone Main Screenshot][product-screenshot-main]
-<img src="screenshots/profile-settings-modal-screenshot.png" alt="Modal_screenshot" width="381px" height="651px">
-![Profile Modal Screenshot][product-screenshot-profile-modal]
+<div style="display: flex; flex-direction: column;">
+    <img src="screenshots/profile-settings-modal-screenshot.png" alt="Profile_Modal_screenshot" width="381px" height="651px">
+    <img src="screenshots/add-project-modal-screenshot.png" alt="Add_Project_Modal_screenshot" width="414.5px" height="241px">
+</div>
 ![Add Task Modal Screenshot][product-screenshot-add-task]
 ![Add Project Modal Screenshot][product-screenshot-add-project]
 ![Figma Design Board Screenshot][product-screenshot-figma]
+
 
 
 
@@ -205,9 +209,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [linkedin-url]: https://www.linkedin.com/in/josiah-schwahn-b58522184/
 
 [product-screenshot-main]: screenshots/todoist-clone-screenshot.png 
-[product-screenshot-profile-modal]: screenshots/profile-settings-modal-screenshot.png
 [product-screenshot-figma]: screenshots/figma-icon-screenshot.png
 [product-screenshot-add-task]: screenshots/add-task-modal-screenshot.png
-[product-screenshot-add-project]: screenshots/add-project-modal-screenshot.png
 
 
