@@ -60,7 +60,7 @@ Learning Objectives
 
 ### Built With
 
-* [![Webpack][webpack-shield]][webpack-url] [![JavaScript][javascript-shield]][javascript-url] [![HTML][html5-shield]][html5-url] [![CSS3][css3-shield]][css3-url] [![Figma][figma-shield]][figma-url] [![Adobe Creative Cloud][adobe-creative-cloud-shield]][adobe-creative-cloud-url]
+[![Webpack][webpack-shield]][webpack-url] [![JavaScript][javascript-shield]][javascript-url] [![HTML][html5-shield]][html5-url] [![CSS3][css3-shield]][css3-url] [![Figma][figma-shield]][figma-url] [![Adobe Creative Cloud][adobe-creative-cloud-shield]][adobe-creative-cloud-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
