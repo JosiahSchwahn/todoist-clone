@@ -37,13 +37,12 @@
 <div></div>
 
 ![Todoist CLone Main Screenshot][product-screenshot-main]
-<div style="display: flex; flex-direction: column; align-items: center; justtify-content:center;">
+<div style="display: flex; flex-direction: column; align-items: center; justify-content:center;">
     <img src="screenshots/profile-settings-modal-screenshot.png" alt="Profile_Modal_screenshot" width="381px" height="651px">
     <img src="screenshots/add-project-modal-screenshot.png" alt="Add_Project_Modal_screenshot" width="414.5px" height="241px">
 </div>
 
 ![Add Task Modal Screenshot][product-screenshot-add-task]
-![Add Project Modal Screenshot][product-screenshot-add-project]
 ![Figma Design Board Screenshot][product-screenshot-figma]
 
 
