@@ -37,7 +37,7 @@
 <div></div>
 
 ![Todoist CLone Main Screenshot][product-screenshot-main]
-<div style="display: flex; flex-direction: column;">
+<div style="display: flex; flex-direction: column; align-items: center; justtify-content:center;">
     <img src="screenshots/profile-settings-modal-screenshot.png" alt="Profile_Modal_screenshot" width="381px" height="651px">
     <img src="screenshots/add-project-modal-screenshot.png" alt="Add_Project_Modal_screenshot" width="414.5px" height="241px">
 </div>
