@@ -103,26 +103,7 @@ Install latest version of NPM
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+*Todoist Clone*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,9 +139,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Josiah Schwahn - schwahn.josiah@gmail.com | josiah@missionranch.co
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [[https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)](https://github.com/JosiahSchwahn/todoist-clone)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -174,24 +155,9 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 * [Glass UI](https://ui.glass/generator/)
 * [notion](https://www.notion.so/)
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
-
-
 
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
@@ -214,4 +180,5 @@ Use this space to list resources you find helpful and would like to give credit 
 [javascript-url]: https://www.javascript.com/
 [css3-url]: https://www.w3.org/Style/CSS/Overview.en.html
 [html5-url]: https://html.com/
+
 
