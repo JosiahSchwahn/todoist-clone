@@ -203,7 +203,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/josiah-schwahn-b58522184/
 
-[product-screenshot-main]: (screenshots/todoist-clone-screenshot.png =300x200)
+[product-screenshot-main]: screenshots/todoist-clone-screenshot.png 
 [product-screenshot-profile-modal]: screenshots/profile-settings-modal-screenshot.png
 [product-screenshot-figma]: screenshots/figma-icon-screenshot.png
 [product-screenshot-add-task]: screenshots/add-task-modal-screenshot.png
